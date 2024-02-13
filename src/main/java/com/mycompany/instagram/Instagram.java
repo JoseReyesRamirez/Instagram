@@ -12,5 +12,6 @@ public class Instagram {
 
     public static void main(String[] args) {
         System.out.println("asfasfasf");
+        System.out.println("asfasfasf");
     }
 }

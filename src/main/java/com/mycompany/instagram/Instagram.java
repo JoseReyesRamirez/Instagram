@@ -11,6 +11,6 @@ package com.mycompany.instagram;
 public class Instagram {
 
     public static void main(String[] args) {
-        System.out.println("aaaaaaaaa");
+        System.out.println("aasss");
     }
 }

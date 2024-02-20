@@ -13,7 +13,7 @@ public class Login extends javax.swing.JFrame {
      
             //IMAGENES EN JLABELS
             this.setLocationRelativeTo(this);
-            Img.SetImageLabel(L_logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo_Login.png");
+            //Img.SetImageLabel(L_logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo_Login.png");
             Img.SetImageLabel(L_logo_meta, "src/main/java/com/mycompany/proyecto/Imagenes/Meta_Logo.png");
         
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
@@ -96,20 +96,18 @@ public class Login extends javax.swing.JFrame {
         });
         Panel_fondo.add(Btn_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 368, 57));
 
-        L_logo_insta.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\Apps Netbeans\\proyecto\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Logo_Login.png")); // NOI18N
-        Panel_fondo.add(L_logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 60, 60));
-
-        L_logo_meta.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\Apps Netbeans\\proyecto\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Meta_Logo.png")); // NOI18N
+        L_logo_insta.setIcon(new javax.swing.ImageIcon("C:\\Users\\CCCU\\Desktop\\Logo_Login.png")); // NOI18N
+        L_logo_insta.setMaximumSize(new java.awt.Dimension(256, 256));
+        L_logo_insta.setMinimumSize(new java.awt.Dimension(256, 256));
+        Panel_fondo.add(L_logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
         Panel_fondo.add(L_logo_meta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 660, 60, 30));
-
-        L_fondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\Apps Netbeans\\proyecto\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Fondo_Login.png")); // NOI18N
-        Panel_fondo.add(L_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
+        Panel_fondo.add(L_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_fondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Panel_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 411, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

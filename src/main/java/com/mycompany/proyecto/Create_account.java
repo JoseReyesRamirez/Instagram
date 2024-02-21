@@ -11,6 +11,11 @@ public class Create_account extends javax.swing.JFrame {
             diseño.BordesRedondeados(30, 100);  
             
             initComponents();
+            
+            //IMAGENES EN JLABELS
+            this.setLocationRelativeTo(this);
+            Img.SetImageLabel(L_fondo_CA, "src/main/java/com/mycompany/proyecto/Imagenes/Fondo_Login.png");
+            Img.SetImageLabel(L_Logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo.png");
 
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_ventana_Iniciar,3);
@@ -106,9 +111,7 @@ public class Create_account extends javax.swing.JFrame {
         L_tienes_cuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         L_tienes_cuenta.setText("¿Tienes una cuenta?");
         jPanel1.add(L_tienes_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
-
-        L_Logo_insta.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Logo.png")); // NOI18N
-        jPanel1.add(L_Logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+        jPanel1.add(L_Logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 210, 70));
 
         Tf_Nombre1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Tf_Nombre1.setText("Nombre");
@@ -119,8 +122,6 @@ public class Create_account extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Tf_Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 60));
-
-        L_fondo_CA.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Fondo_Login.png")); // NOI18N
         jPanel1.add(L_fondo_CA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

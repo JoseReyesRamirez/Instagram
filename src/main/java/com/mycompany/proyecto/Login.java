@@ -17,7 +17,8 @@ public class Login extends javax.swing.JFrame {
             this.setLocationRelativeTo(this);
             Img.SetImageLabel(L_logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo_Login.png");
             Img.SetImageLabel(L_logo_meta, "src/main/java/com/mycompany/proyecto/Imagenes/Meta_Logo.png");
-        
+            Img.SetImageLabel(L_fondo_Lg, "src/main/java/com/mycompany/proyecto/Imagenes/Fondo_Login.png");
+            
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_cambiar_contraseña,3);
             diseño.trasparenciaButton(Btn_Iniciar_sesion,2);
@@ -130,8 +131,6 @@ public class Login extends javax.swing.JFrame {
         );
 
         Panel_fondo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 410, -1));
-
-        L_fondo_Lg.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Fondo_Login.png")); // NOI18N
         Panel_fondo.add(L_fondo_Lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

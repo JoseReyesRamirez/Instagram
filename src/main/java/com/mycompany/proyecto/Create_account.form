@@ -177,14 +177,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="L_Logo_insta">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Documents\NetBeansProjects\Instagram\src\main\java\com\mycompany\proyecto\Imagenes\Logo.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="50" width="-1" height="-1"/>
+              <AbsoluteConstraints x="100" y="50" width="210" height="70"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -206,11 +201,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="L_fondo_CA">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Documents\NetBeansProjects\Instagram\src\main\java\com\mycompany\proyecto\Imagenes\Fondo_Login.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="0" width="410" height="700"/>

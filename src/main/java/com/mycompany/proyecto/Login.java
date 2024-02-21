@@ -163,6 +163,7 @@ public class Login extends javax.swing.JFrame {
         User abrir=new User();
         abrir.setVisible(true);
         this.setVisible(false);
+        //no se hace el fucking commit ahhh!!!!!!!1
     }//GEN-LAST:event_Btn_Iniciar_sesionActionPerformed
 
     private void Pw_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pw_contraseñaActionPerformed

@@ -42,6 +42,7 @@ public class Login extends javax.swing.JFrame {
         L_logo_insta = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         BackUser = new javax.swing.JButton();
+        L_fondo_Lg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -103,7 +104,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        BackUser.setIcon(new javax.swing.ImageIcon("C:\\Users\\Guest\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\backW.png")); // NOI18N
         BackUser.setBorder(null);
         BackUser.setBorderPainted(false);
         BackUser.setContentAreaFilled(false);
@@ -131,6 +131,9 @@ public class Login extends javax.swing.JFrame {
 
         Panel_fondo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 410, -1));
 
+        L_fondo_Lg.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Fondo_Login.png")); // NOI18N
+        Panel_fondo.add(L_fondo_Lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,7 +155,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_BackUserActionPerformed
 
     private void Btn_crear_cuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_crear_cuentaActionPerformed
-        // TODO add your handling code here:
+        Create_account abrir=new Create_account();
+        abrir.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_Btn_crear_cuentaActionPerformed
 
     private void Btn_cambiar_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_cambiar_contraseñaActionPerformed
@@ -190,6 +195,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Iniciar_sesion;
     private javax.swing.JButton Btn_cambiar_contraseña;
     private javax.swing.JButton Btn_crear_cuenta;
+    private javax.swing.JLabel L_fondo_Lg;
     private javax.swing.JLabel L_logo_insta;
     private javax.swing.JLabel L_logo_meta;
     private javax.swing.JPanel Panel_fondo;

@@ -63,13 +63,12 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="74" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -132,11 +131,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Guest\Documents\NetBeansProjects\Instagram\src\main\java\com\mycompany\proyecto\Imagenes\Fotodeperfilnotanmini.png"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="ShareProfile">
       <Properties>
@@ -226,9 +220,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="BackUser">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Guest\Documents\NetBeansProjects\Instagram\src\main\java\com\mycompany\proyecto\Imagenes\backW.png"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

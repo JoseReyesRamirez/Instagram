@@ -14,8 +14,8 @@ public class Create_account extends javax.swing.JFrame {
             
             //IMAGENES EN JLABELS
             this.setLocationRelativeTo(this);
-            Img.SetImageLabel(L_fondo_CA, "src/main/java/com/mycompany/proyecto/Imagenes/Fondo_Login.png");
-            Img.SetImageLabel(L_Logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo.png");
+            Img.SetImageLabel(L_fondo_CA, "src/main/java/imagenes/Fondo_Login.png");
+            Img.SetImageLabel(L_Logo_insta, "src/main/java/imagenes/Logo.png");
 
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_ventana_Iniciar,3);

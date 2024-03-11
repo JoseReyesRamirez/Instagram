@@ -15,9 +15,9 @@ public class Login extends javax.swing.JFrame {
      
             //IMAGENES EN JLABELS
             this.setLocationRelativeTo(this);
-            Img.SetImageLabel(L_logo_insta, "src/main/java/com/mycompany/proyecto/Imagenes/Logo_Login.png");
-            Img.SetImageLabel(L_logo_meta, "src/main/java/com/mycompany/proyecto/Imagenes/Meta_Logo.png");
-            Img.SetImageLabel(L_fondo_Lg, "src/main/java/com/mycompany/proyecto/Imagenes/Fondo_Login.png");
+            Img.SetImageLabel(L_logo_insta, "src/main/java/imagenes/Logo_Login.png");
+            Img.SetImageLabel(L_logo_meta, "src/main/java/imagenes/Meta_Logo.png");
+            Img.SetImageLabel(L_fondo_Lg, "src/main/java/imagenes/Fondo_Login.png");
             
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_cambiar_contraseña,3);
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_cambiar_contraseñaActionPerformed
 
     private void Btn_Iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Iniciar_sesionActionPerformed
-        User abrir=new User();
+        Pagina_Inicio abrir=new Pagina_Inicio();
         abrir.setVisible(true);
         this.setVisible(false);
         //no se hace el fucking commit ahhh!!!!!!!

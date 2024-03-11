@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.proyecto;
 
 /**
@@ -63,8 +60,6 @@ public class User extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Guest\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\Fotodeperfilnotanmini.png")); // NOI18N
-
         ShareProfile.setBackground(new java.awt.Color(102, 102, 102));
         ShareProfile.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         ShareProfile.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +90,6 @@ public class User extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        BackUser.setIcon(new javax.swing.ImageIcon("C:\\Users\\Guest\\Documents\\NetBeansProjects\\Instagram\\src\\main\\java\\com\\mycompany\\proyecto\\Imagenes\\backW.png")); // NOI18N
         BackUser.setBorder(null);
         BackUser.setBorderPainted(false);
         BackUser.setContentAreaFilled(false);
@@ -143,13 +137,12 @@ public class User extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
+                                .addGap(41, 41, 41)
                                 .addComponent(jLabel5)
-                                .addGap(61, 61, 61)
+                                .addGap(67, 67, 67)
                                 .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                                .addComponent(jLabel7)
-                                .addGap(21, 21, 21)))))
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel7)))))
                 .addContainerGap(24, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -242,7 +235,6 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

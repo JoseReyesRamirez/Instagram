@@ -1,4 +1,5 @@
 package com.mycompany.proyecto;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -32,9 +33,10 @@ public class Create_account extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Tf_nom_usuario = new javax.swing.JTextField();
-        Tf_Nombre = new javax.swing.JTextField();
+        Tf_Fecha = new javax.swing.JTextField();
         Tf_Correo = new javax.swing.JTextField();
         Pw_Crear_contraseña = new javax.swing.JPasswordField();
         CB_Terminos_Condiciones = new javax.swing.JCheckBox();
@@ -42,6 +44,7 @@ public class Create_account extends javax.swing.JFrame {
         Btn_ventana_Iniciar = new javax.swing.JButton();
         L_tienes_cuenta = new javax.swing.JLabel();
         L_Logo_insta = new javax.swing.JLabel();
+        NoCheckBox = new javax.swing.JLabel();
         Tf_Nombre1 = new javax.swing.JTextField();
         L_fondo_CA = new javax.swing.JLabel();
 
@@ -59,15 +62,15 @@ public class Create_account extends javax.swing.JFrame {
         });
         jPanel1.add(Tf_nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 370, 60));
 
-        Tf_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_Nombre.setText("AAAA/MM/DD");
-        Tf_Nombre.setToolTipText("");
-        Tf_Nombre.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Fecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_Fecha.setText("AAAA/MM/DD");
+        Tf_Fecha.setToolTipText("");
+        Tf_Fecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tf_NombreActionPerformed(evt);
+                Tf_FechaActionPerformed(evt);
             }
         });
-        jPanel1.add(Tf_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, 60));
+        jPanel1.add(Tf_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, 60));
 
         Tf_Correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Tf_Correo.setText("Correo Electronico");
@@ -89,7 +92,12 @@ public class Create_account extends javax.swing.JFrame {
         jPanel1.add(Pw_Crear_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 370, 60));
 
         CB_Terminos_Condiciones.setText("He leído y acepto los términos y condiciones de uso");
-        jPanel1.add(CB_Terminos_Condiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
+        CB_Terminos_Condiciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Terminos_CondicionesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CB_Terminos_Condiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
         Btn_Crear_Cuenta.setBackground(new java.awt.Color(0, 102, 255));
         Btn_Crear_Cuenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -118,6 +126,16 @@ public class Create_account extends javax.swing.JFrame {
         L_tienes_cuenta.setText("¿Tienes una cuenta?");
         jPanel1.add(L_tienes_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
         jPanel1.add(L_Logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 210, 70));
+
+        NoCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NoCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        NoCheckBox.setText("No has aceptado los terminos y condiciones!");
+        NoCheckBox.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                NoCheckBoxComponentHidden(evt);
+            }
+        });
+        jPanel1.add(NoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
 
         Tf_Nombre1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Tf_Nombre1.setText("Nombre");
@@ -148,9 +166,9 @@ public class Create_account extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_nom_usuarioActionPerformed
 
-    private void Tf_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NombreActionPerformed
+    private void Tf_FechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_FechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_NombreActionPerformed
+    }//GEN-LAST:event_Tf_FechaActionPerformed
 
     private void Tf_CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_CorreoActionPerformed
         // TODO add your handling code here:
@@ -161,18 +179,24 @@ public class Create_account extends javax.swing.JFrame {
     }//GEN-LAST:event_Pw_Crear_contraseñaActionPerformed
 
     private void Btn_Crear_CuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Crear_CuentaActionPerformed
-        BD bd = new BD();
-        Statement stm=bd.Get_conn();
-        String query = "INSERT INTO Tabla1 VALUES (16,'jgf',15)";
-        try {
-            stm.executeUpdate(query);
-        } catch (SQLException ex) {
-            Logger.getLogger(Create_account.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.print("Insert\n");
+        
+        //int edad=54;
+       String nombre = Tf_Nombre1.getText();
+       String fecha = Tf_Fecha.getText();
+       String correo = Tf_Correo.getText();
+       String user = Tf_nom_usuario.getText();
+       String pass = Pw_Crear_contraseña.getText();
+       
+       if(CB_Terminos_Condiciones.isSelected() == true ){
+        BDconsultas temp = new BDconsultas();
+        temp.insertarDato(nombre, fecha);
         User abrir=new User();
         abrir.setVisible(true);
         this.setVisible(false);
+       } else {
+        NoCheckBox.setForeground(Color.red);
+       }
+       
         //no se hace el fucking commit ahhh!!!!!!!
     }//GEN-LAST:event_Btn_Crear_CuentaActionPerformed
 
@@ -186,12 +210,19 @@ public class Create_account extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_Nombre1ActionPerformed
 
+    private void NoCheckBoxComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_NoCheckBoxComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoCheckBoxComponentHidden
+
+    private void CB_Terminos_CondicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Terminos_CondicionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Terminos_CondicionesActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) throws SQLException {
         /* BORDES REDONDEADOS */
-        
         Create_account ventanaCrear = new Create_account();
         
         java.awt.EventQueue.invokeLater(new Runnable(){ public void run() {ventanaCrear.setVisible(true);} });
@@ -205,11 +236,13 @@ public class Create_account extends javax.swing.JFrame {
     private javax.swing.JLabel L_Logo_insta;
     private javax.swing.JLabel L_fondo_CA;
     private javax.swing.JLabel L_tienes_cuenta;
+    private javax.swing.JLabel NoCheckBox;
     private javax.swing.JPasswordField Pw_Crear_contraseña;
     private javax.swing.JTextField Tf_Correo;
-    private javax.swing.JTextField Tf_Nombre;
+    private javax.swing.JTextField Tf_Fecha;
     private javax.swing.JTextField Tf_Nombre1;
     private javax.swing.JTextField Tf_nom_usuario;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

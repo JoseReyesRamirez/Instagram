@@ -1,5 +1,11 @@
 package com.mycompany.proyecto;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Create_account extends javax.swing.JFrame {
 
@@ -155,6 +161,15 @@ public class Create_account extends javax.swing.JFrame {
     }//GEN-LAST:event_Pw_Crear_contraseñaActionPerformed
 
     private void Btn_Crear_CuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Crear_CuentaActionPerformed
+        BD bd = new BD();
+        Statement stm=bd.Get_conn();
+        String query = "INSERT INTO Tabla1 VALUES (16,'jgf',15)";
+        try {
+            stm.executeUpdate(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(Create_account.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.print("Insert\n");
         User abrir=new User();
         abrir.setVisible(true);
         this.setVisible(false);
@@ -174,9 +189,11 @@ public class Create_account extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* BORDES REDONDEADOS */
+        
         Create_account ventanaCrear = new Create_account();
+        
         java.awt.EventQueue.invokeLater(new Runnable(){ public void run() {ventanaCrear.setVisible(true);} });
          
     }

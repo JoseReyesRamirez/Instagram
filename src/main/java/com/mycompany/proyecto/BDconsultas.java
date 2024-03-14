@@ -5,17 +5,22 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class BDconsultas {
     
-    public void insertarDato(String b, String c){
+    public void insertarDato(String nom, String fechaStr, String correo, String user, String pass){
          BD bd = new BD();
         Statement stm=bd.Get_conn();
-        String datos = "'"+b+"','"+c+"'";
-        String query = "INSERT INTO Tabla1 (nombre,edad) VALUES ("+datos+")";
+        
+        String datos = "'"+user+"','"+correo+"','"+pass+"','"+nom+"','"+fechaStr+"'";
+        String query = "INSERT INTO Usuarios (Username,Email,Contraseña,Nombre,FechaNa) VALUES ("+datos+")";
+        
         try {
             stm.executeUpdate(query);
         } catch (SQLException ex) {

@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,16 +39,16 @@ public class Create_account extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Tf_nom_usuario = new javax.swing.JTextField();
-        Tf_Fecha = new javax.swing.JTextField();
         Tf_Correo = new javax.swing.JTextField();
         Pw_Crear_contraseña = new javax.swing.JPasswordField();
         CB_Terminos_Condiciones = new javax.swing.JCheckBox();
         Btn_Crear_Cuenta = new javax.swing.JButton();
         Btn_ventana_Iniciar = new javax.swing.JButton();
+        Tf_Date = new javax.swing.JFormattedTextField();
         L_tienes_cuenta = new javax.swing.JLabel();
         L_Logo_insta = new javax.swing.JLabel();
         NoCheckBox = new javax.swing.JLabel();
-        Tf_Nombre1 = new javax.swing.JTextField();
+        Tf_Nombre2 = new javax.swing.JTextField();
         L_fondo_CA = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,16 +64,6 @@ public class Create_account extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Tf_nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 370, 60));
-
-        Tf_Fecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_Fecha.setText("AAAA/MM/DD");
-        Tf_Fecha.setToolTipText("");
-        Tf_Fecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tf_FechaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Tf_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, 60));
 
         Tf_Correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Tf_Correo.setText("Correo Electronico");
@@ -122,6 +115,14 @@ public class Create_account extends javax.swing.JFrame {
         });
         jPanel1.add(Btn_ventana_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 630, -1, -1));
 
+        try {
+            Tf_Date.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        Tf_Date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(Tf_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 180, 60));
+
         L_tienes_cuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         L_tienes_cuenta.setText("¿Tienes una cuenta?");
         jPanel1.add(L_tienes_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
@@ -137,15 +138,15 @@ public class Create_account extends javax.swing.JFrame {
         });
         jPanel1.add(NoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
 
-        Tf_Nombre1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_Nombre1.setText("Nombre");
-        Tf_Nombre1.setToolTipText("");
-        Tf_Nombre1.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Nombre2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_Nombre2.setText("Nombre");
+        Tf_Nombre2.setToolTipText("");
+        Tf_Nombre2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tf_Nombre1ActionPerformed(evt);
+                Tf_Nombre2ActionPerformed(evt);
             }
         });
-        jPanel1.add(Tf_Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 60));
+        jPanel1.add(Tf_Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 60));
         jPanel1.add(L_fondo_CA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,10 +167,6 @@ public class Create_account extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_nom_usuarioActionPerformed
 
-    private void Tf_FechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_FechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_FechaActionPerformed
-
     private void Tf_CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_CorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_CorreoActionPerformed
@@ -181,15 +178,16 @@ public class Create_account extends javax.swing.JFrame {
     private void Btn_Crear_CuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Crear_CuentaActionPerformed
         
         //int edad=54;
-       String nombre = Tf_Nombre1.getText();
-       String fecha = Tf_Fecha.getText();
+       String nombre = Tf_Nombre2.getText();
+       String fechaStr = Tf_Date.getText();
+      
        String correo = Tf_Correo.getText();
        String user = Tf_nom_usuario.getText();
        String pass = Pw_Crear_contraseña.getText();
        
        if(CB_Terminos_Condiciones.isSelected() == true ){
         BDconsultas temp = new BDconsultas();
-        temp.insertarDato(nombre, fecha);
+        temp.insertarDato(nombre, fechaStr, correo, user, pass);
         User abrir=new User();
         abrir.setVisible(true);
         this.setVisible(false);
@@ -206,10 +204,6 @@ public class Create_account extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_Btn_ventana_IniciarActionPerformed
 
-    private void Tf_Nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_Nombre1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_Nombre1ActionPerformed
-
     private void NoCheckBoxComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_NoCheckBoxComponentHidden
         // TODO add your handling code here:
     }//GEN-LAST:event_NoCheckBoxComponentHidden
@@ -217,6 +211,10 @@ public class Create_account extends javax.swing.JFrame {
     private void CB_Terminos_CondicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Terminos_CondicionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CB_Terminos_CondicionesActionPerformed
+
+    private void Tf_Nombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_Nombre2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_Nombre2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,8 +237,8 @@ public class Create_account extends javax.swing.JFrame {
     private javax.swing.JLabel NoCheckBox;
     private javax.swing.JPasswordField Pw_Crear_contraseña;
     private javax.swing.JTextField Tf_Correo;
-    private javax.swing.JTextField Tf_Fecha;
-    private javax.swing.JTextField Tf_Nombre1;
+    private javax.swing.JFormattedTextField Tf_Date;
+    private javax.swing.JTextField Tf_Nombre2;
     private javax.swing.JTextField Tf_nom_usuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

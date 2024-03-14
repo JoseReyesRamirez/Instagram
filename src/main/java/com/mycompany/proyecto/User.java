@@ -17,6 +17,11 @@ public class User extends javax.swing.JFrame {
         //IMAGENES EN BOTONES
         this.setLocationRelativeTo(this);
         Imgn.SetImageButton(configuracionbt, "src/main/java/imagenes/Configuracion.png");
+        Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
+        Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
+        Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
+        Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
+        Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
         //BOTONES REDODNEADOS
             diseño.BordesRedondeados(30, 100); 
@@ -36,76 +41,49 @@ public class User extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        fotoperfillbl = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        compartirperfilbt = new javax.swing.JButton();
-        editarperfilbt = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
         configuracionbt = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        casitabt = new javax.swing.JButton();
+        lupabt = new javax.swing.JButton();
+        crearbt = new javax.swing.JButton();
+        reelsbt = new javax.swing.JButton();
+        perfilbt = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton6 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        contseguidos = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        fotoperfillbl = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        editarperfilbt = new javax.swing.JButton();
+        compartirperfilbt = new javax.swing.JButton();
+        contpublicaciones = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        contsegudores = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(410, 702));
         setPreferredSize(new java.awt.Dimension(410, 702));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(410, 702));
+        jPanel1.setMinimumSize(new java.awt.Dimension(410, 702));
         jPanel1.setPreferredSize(new java.awt.Dimension(410, 702));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(fotoperfillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 50, 40));
-
-        jTextField6.setEditable(false);
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("0");
-        jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 30, -1));
-
-        jTextField2.setEditable(false);
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("0");
-        jTextField2.setBorder(null);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 30, -1));
-
-        jTextField5.setEditable(false);
-        jTextField5.setText("Publicaciones");
-        jTextField5.setBorder(null);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
-
-        jTextField1.setEditable(false);
-        jTextField1.setText("Seguidores");
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
-
-        jTextField4.setEditable(false);
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("0");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 30, -1));
-
-        compartirperfilbt.setText("Compartir perfil");
-        jPanel1.add(compartirperfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 190, -1));
-
-        editarperfilbt.setText("Editar perfil");
-        jPanel1.add(editarperfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 180, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField3.setText("jTextField3");
+        usuario.setEditable(false);
+        usuario.setBackground(new java.awt.Color(255, 255, 255));
+        usuario.setText("Usuario");
+        usuario.setBorder(null);
+        usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioActionPerformed(evt);
+            }
+        });
 
         configuracionbt.setBorder(null);
         configuracionbt.setBorderPainted(false);
@@ -118,50 +96,146 @@ public class User extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                 .addComponent(configuracionbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addGap(20, 20, 20))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(configuracionbt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(configuracionbt, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 70));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 50));
+
+        casitabt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casitabtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(casitabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 900, 30, 20));
+        jPanel1.add(lupabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 900, 30, 20));
+        jPanel1.add(crearbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 900, 30, 20));
+        jPanel1.add(reelsbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 900, 30, 20));
+        jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 900, 30, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 883, 410, 50));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(null);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setMaximumSize(new java.awt.Dimension(410, 702));
+
+        contseguidos.setEditable(false);
+        contseguidos.setBackground(new java.awt.Color(255, 255, 255));
+        contseguidos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contseguidos.setText("0");
+        contseguidos.setBorder(null);
 
         jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField7.setText("Seguidos");
         jTextField7.setBorder(null);
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 80, -1));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 900, -1, -1));
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setText("Seguidores");
+        jTextField1.setBorder(null);
 
-        jButton3.setText("jButton3");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 900, -1, -1));
+        editarperfilbt.setBackground(new java.awt.Color(204, 204, 204));
+        editarperfilbt.setText("Editar perfil");
 
-        jButton4.setText("jButton4");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 900, -1, -1));
+        compartirperfilbt.setBackground(new java.awt.Color(204, 204, 204));
+        compartirperfilbt.setText("Compartir perfil");
 
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 900, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 883, 410, 50));
+        contpublicaciones.setEditable(false);
+        contpublicaciones.setBackground(new java.awt.Color(255, 255, 255));
+        contpublicaciones.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contpublicaciones.setText("0");
+        contpublicaciones.setBorder(null);
+        contpublicaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contpublicacionesActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("jButton6");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 900, -1, -1));
+        jTextField5.setEditable(false);
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField5.setText("Publicaciones");
+        jTextField5.setBorder(null);
+
+        contsegudores.setEditable(false);
+        contsegudores.setBackground(new java.awt.Color(255, 255, 255));
+        contsegudores.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contsegudores.setText("0");
+        contsegudores.setBorder(null);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(fotoperfillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(contpublicaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(contsegudores, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(contseguidos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(editarperfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(compartirperfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(contseguidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contsegudores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contpublicaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fotoperfillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(83, 83, 83)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(compartirperfilbt)
+                    .addComponent(editarperfilbt))
+                .addContainerGap(667, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel3);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 53, 410, 830));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,9 +247,17 @@ public class User extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void contpublicacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contpublicacionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_contpublicacionesActionPerformed
+
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioActionPerformed
+
+    private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casitabtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,24 +295,26 @@ public class User extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton casitabt;
     private javax.swing.JButton compartirperfilbt;
     private javax.swing.JButton configuracionbt;
+    private javax.swing.JTextField contpublicaciones;
+    private javax.swing.JTextField contsegudores;
+    private javax.swing.JTextField contseguidos;
+    private javax.swing.JButton crearbt;
     private javax.swing.JButton editarperfilbt;
     private javax.swing.JLabel fotoperfillbl;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JButton lupabt;
+    private javax.swing.JButton perfilbt;
+    private javax.swing.JButton reelsbt;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }

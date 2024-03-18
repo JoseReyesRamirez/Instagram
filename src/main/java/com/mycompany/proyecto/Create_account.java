@@ -30,6 +30,14 @@ public class Create_account extends javax.swing.JFrame {
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_ventana_Iniciar,3);
             diseño.trasparenciaButton(Btn_Crear_Cuenta,2);
+            
+                        //CREAR UN PLACEHOLDER
+            TextPrompt TextoFondo1 = new TextPrompt("Nombre", Tf_Nombre2);
+            TextPrompt TextoFondo2 = new TextPrompt("Correo Electronico", Tf_Correo);
+            TextPrompt TextoFondo3 = new TextPrompt("Nombre de Usuario", Tf_nom_usuario);
+            TextPrompt TextoFondo4 = new TextPrompt("Contraseña", Pw_Crear_contraseña);
+
+            
            
         }
     @SuppressWarnings("unchecked")
@@ -56,7 +64,6 @@ public class Create_account extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Tf_nom_usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_nom_usuario.setText("Nombre de Usuario");
         Tf_nom_usuario.setToolTipText("");
         Tf_nom_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +73,6 @@ public class Create_account extends javax.swing.JFrame {
         jPanel1.add(Tf_nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 370, 60));
 
         Tf_Correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_Correo.setText("Correo Electronico");
         Tf_Correo.setToolTipText("");
         Tf_Correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +82,6 @@ public class Create_account extends javax.swing.JFrame {
         jPanel1.add(Tf_Correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 370, 60));
 
         Pw_Crear_contraseña.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Pw_Crear_contraseña.setText("Contraseña");
         Pw_Crear_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Pw_Crear_contraseñaActionPerformed(evt);
@@ -139,7 +144,6 @@ public class Create_account extends javax.swing.JFrame {
         jPanel1.add(NoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
 
         Tf_Nombre2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_Nombre2.setText("Nombre");
         Tf_Nombre2.setToolTipText("");
         Tf_Nombre2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

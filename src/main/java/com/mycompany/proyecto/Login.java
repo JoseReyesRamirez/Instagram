@@ -216,7 +216,7 @@ public class Login extends javax.swing.JFrame {
                 abrir.setVisible(true);
                 this.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(this, "ERR");
+                //JOptionPane.showMessageDialog(this, "ERR");
                 NoAccount.setForeground(Color.red);
             }
         } catch (Exception ex) {

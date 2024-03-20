@@ -1,9 +1,14 @@
 package com.mycompany.proyecto;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.accessibility.AccessibleState;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
 
 
 public class Login extends javax.swing.JFrame {
@@ -11,6 +16,11 @@ public class Login extends javax.swing.JFrame {
     Imagenes Img = new Imagenes();
     
         public Login() {
+            super("Mi Ventana");
+            setSize(700, 400);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setResizable(false); // Evitar que el usuario modifique el tamaño
+            setVisible(true);
             //BOTONES REDODNEADOS
             diseño.BordesRedondeados(30, 100);  
             
@@ -26,12 +36,7 @@ public class Login extends javax.swing.JFrame {
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_cambiar_contraseña,3);
             diseño.trasparenciaButton(Btn_Iniciar_sesion,2);
-            
-            //CREAR UN PLACEHOLDER
-            TextPrompt TextoFondo = new TextPrompt("Telefono, Usuario o Correo Electronico", Tf_usuario);
-            TextPrompt TextoFondo2 = new TextPrompt("Contraseña", Pw_contraseña);
-
-
+           
         }
 
 
@@ -43,6 +48,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         Panel_fondo = new javax.swing.JPanel();
+        NoAccount = new javax.swing.JLabel();
         Tf_usuario = new javax.swing.JTextField();
         Pw_contraseña = new javax.swing.JPasswordField();
         Btn_Iniciar_sesion = new javax.swing.JButton();
@@ -50,16 +56,28 @@ public class Login extends javax.swing.JFrame {
         Btn_crear_cuenta = new javax.swing.JButton();
         L_logo_meta = new javax.swing.JLabel();
         L_logo_insta = new javax.swing.JLabel();
+        L_fondo_Lg = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         BackUser = new javax.swing.JButton();
-        L_fondo_Lg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         Panel_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        NoAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NoAccount.setForeground(new java.awt.Color(255, 255, 255));
+        NoAccount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NoAccount.setText("El Usuario o contraseña son incorrectos");
+        NoAccount.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                NoAccountComponentHidden(evt);
+            }
+        });
+        Panel_fondo.add(NoAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 380, -1));
+
         Tf_usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_usuario.setText("Telefono, Usuario o Correo Electronico");
         Tf_usuario.setToolTipText("");
         Tf_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +87,7 @@ public class Login extends javax.swing.JFrame {
         Panel_fondo.add(Tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 370, 60));
 
         Pw_contraseña.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Pw_contraseña.setText("Contraseña");
         Pw_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Pw_contraseñaActionPerformed(evt);
@@ -109,6 +128,7 @@ public class Login extends javax.swing.JFrame {
         Panel_fondo.add(Btn_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 368, 57));
         Panel_fondo.add(L_logo_meta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 60, 30));
         Panel_fondo.add(L_logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 60, 60));
+        Panel_fondo.add(L_fondo_Lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -138,7 +158,6 @@ public class Login extends javax.swing.JFrame {
         );
 
         Panel_fondo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 410, -1));
-        Panel_fondo.add(L_fondo_Lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,10 +190,46 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_cambiar_contraseñaActionPerformed
 
     private void Btn_Iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Iniciar_sesionActionPerformed
-        Pagina_Inicio abrir=new Pagina_Inicio();
-        abrir.setVisible(true);
-        this.setVisible(false);
-        //no se hace el fucking commit ahhh!!!!!!!
+        String usuario = Tf_usuario.getText();
+        String contraseña = new String(Pw_contraseña.getPassword());
+ 
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+ 
+        try {
+             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            String url = "jdbc:ucanaccess://" + ".\\DB_Instagram.accdb"; //Conectamos base de datos;
+            conn = DriverManager.getConnection(url);
+ 
+             String query = "SELECT * FROM Usuarios WHERE Username = ? AND Contraseña = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, usuario);
+            stmt.setString(2, contraseña);
+ 
+            rs = stmt.executeQuery();
+ 
+            if (rs.next()) {
+                NoAccount.setForeground(Color.white);
+                //JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso");
+                Pagina_Inicio abrir=new Pagina_Inicio();
+                abrir.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "ERR");
+                NoAccount.setForeground(Color.red);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_Btn_Iniciar_sesionActionPerformed
 
     private void Pw_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pw_contraseñaActionPerformed
@@ -184,6 +239,10 @@ public class Login extends javax.swing.JFrame {
     private void Tf_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Tf_usuarioActionPerformed
+
+    private void NoAccountComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_NoAccountComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoAccountComponentHidden
     
 
 
@@ -204,6 +263,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel L_fondo_Lg;
     private javax.swing.JLabel L_logo_insta;
     private javax.swing.JLabel L_logo_meta;
+    private javax.swing.JLabel NoAccount;
     private javax.swing.JPanel Panel_fondo;
     private javax.swing.JPasswordField Pw_contraseña;
     private javax.swing.JTextField Tf_usuario;

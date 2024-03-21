@@ -1,5 +1,6 @@
 package com.mycompany.proyecto;
 
+import static com.mycompany.proyecto.Login.ClaseOrigen.BDusuario;
 import java.awt.Color;
 import java.awt.Font;
 import javax.accessibility.AccessibleState;
@@ -9,7 +10,11 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 
+////////////////////////////////////////////////
 
+
+
+//////////////////////////////////////////////////
 
 public class Login extends javax.swing.JFrame {
     Diseño_objetos diseño = new Diseño_objetos();
@@ -42,7 +47,11 @@ public class Login extends javax.swing.JFrame {
             TextPrompt TextoFondo2 = new TextPrompt("Contraseña", Pw_contraseña);
            
         }
-
+//////////VARIABLE COMPARTIDA (pasa el a USER)
+public class ClaseOrigen {
+    public static String BDusuario;
+}
+//////////VARIABLE COMPARTIDA (pasa el a USER)
 
     
  
@@ -193,6 +202,9 @@ public class Login extends javax.swing.JFrame {
 
     private void Btn_Iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Iniciar_sesionActionPerformed
         String usuario = Tf_usuario.getText();
+        //////////VARIABLE COMPARTIDA (pasa el a USER)
+        BDusuario=Tf_usuario.getText();
+        /////////////////////////////////////////////
         String contraseña = new String(Pw_contraseña.getPassword());
  
         Connection conn = null;

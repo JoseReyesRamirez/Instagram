@@ -1,6 +1,15 @@
 
 package com.mycompany.proyecto;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.accessibility.AccessibleState;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
 
 public class User extends javax.swing.JFrame {
     Imagenes Img = new Imagenes();
@@ -8,8 +17,14 @@ public class User extends javax.swing.JFrame {
     Diseño_objetos diseño = new Diseño_objetos();
   
     public User() {
-        initComponents();
         
+        //////////VARIABLE COMPARTIDA (pasa el dato desde LOGIN)
+        initComponents();
+        String datoRecibido = Login.ClaseOrigen.BDusuario;
+        String texto;
+        texto= Login.ClaseOrigen.BDusuario;
+        usuario.setText(texto);
+        ////////////////////////////////////////////////////////
         //IMAGENES EN JLABELS
             this.setLocationRelativeTo(this);
             Img.SetImageLabel(fotoperfillbl, "src/main/java/imagenes/Perfil.png");
@@ -29,8 +44,8 @@ public class User extends javax.swing.JFrame {
         //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(editarperfilbt,2);
             diseño.trasparenciaButton(compartirperfilbt,2);    
-    }
 
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,8 +79,6 @@ public class User extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(410, 702));
-        setPreferredSize(new java.awt.Dimension(410, 702));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(410, 702));
@@ -251,13 +264,13 @@ public class User extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contpublicacionesActionPerformed
 
-    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioActionPerformed
-
     private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_casitabtActionPerformed
+
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioActionPerformed
 
     /**
      * @param args the command line arguments

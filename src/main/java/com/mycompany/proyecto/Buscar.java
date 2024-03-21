@@ -38,6 +38,9 @@ public class Buscar extends javax.swing.JFrame {
         reelsbt = new javax.swing.JButton();
         perfilbt = new javax.swing.JButton();
         L_Fondo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Buscador = new java.awt.TextField();
+        sobadote = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,6 +102,13 @@ public class Buscar extends javax.swing.JFrame {
         });
         jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 40, 30));
         jPanel1.add(L_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
+
+        Buscador.setText("Buscador");
+        jPanel1.add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, -1));
+
+        sobadote.setText("sobadote");
+        jPanel1.add(sobadote, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 260, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,13 +194,16 @@ public class Buscar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.TextField Buscador;
     private javax.swing.JLabel L_Fondo;
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton lupabt;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;
+    private javax.swing.JButton sobadote;
     // End of variables declaration//GEN-END:variables
 }

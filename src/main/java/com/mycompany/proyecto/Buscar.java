@@ -40,6 +40,7 @@ public class Buscar extends javax.swing.JFrame {
         L_Fondo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Buscador = new java.awt.TextField();
+        sobadote = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +106,9 @@ public class Buscar extends javax.swing.JFrame {
 
         Buscador.setText("Buscador");
         jPanel1.add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, -1));
+
+        sobadote.setText("sobadote");
+        jPanel1.add(sobadote, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 260, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,5 +204,6 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JButton lupabt;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;
+    private javax.swing.JButton sobadote;
     // End of variables declaration//GEN-END:variables
 }

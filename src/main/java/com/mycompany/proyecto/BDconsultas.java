@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 public class BDconsultas {
@@ -28,6 +31,30 @@ public class BDconsultas {
         }
         System.out.print("Insert\n");
     }
+    public ImageIcon extraerImg(){
+         BD bd = new BD();
+        Statement stm=bd.Get_conn();
+        String query = "SELECT Imagen FROM Publicaciones WHERE Id =1";
+        System.out.print("query\n");
+        
+        try {
+            ResultSet rs = stm.executeQuery(query);
+            byte[] bytesImagen = null;
+             if (rs.next()) {
+            bytesImagen = rs.getBytes("Imagen");
+        }
+            if (bytesImagen != null) {
+            ImageIcon imagen = new ImageIcon(bytesImagen);
+            return imagen;
+        }
+            
+        System.out.print("extraida\n");
+    }catch (SQLException ex) {
+            Logger.getLogger(Create_account.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     
     public void Select(String b, String c){
          BD bd = new BD();

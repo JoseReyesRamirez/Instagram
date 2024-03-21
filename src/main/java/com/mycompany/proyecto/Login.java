@@ -36,6 +36,10 @@ public class Login extends javax.swing.JFrame {
             //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
             diseño.trasparenciaButton(Btn_cambiar_contraseña,3);
             diseño.trasparenciaButton(Btn_Iniciar_sesion,2);
+            
+                                    //CREAR UN PLACEHOLDER
+            TextPrompt TextoFondo1 = new TextPrompt("Telefono, Usuario o Correo Electronico", Tf_usuario);
+            TextPrompt TextoFondo2 = new TextPrompt("Contraseña", Pw_contraseña);
            
         }
 
@@ -77,7 +81,6 @@ public class Login extends javax.swing.JFrame {
         Panel_fondo.add(NoAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 380, -1));
 
         Tf_usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_usuario.setText("Telefono, Usuario o Correo Electronico");
         Tf_usuario.setToolTipText("");
         Tf_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +90,6 @@ public class Login extends javax.swing.JFrame {
         Panel_fondo.add(Tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 370, 60));
 
         Pw_contraseña.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Pw_contraseña.setText("Contraseña");
         Pw_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Pw_contraseñaActionPerformed(evt);

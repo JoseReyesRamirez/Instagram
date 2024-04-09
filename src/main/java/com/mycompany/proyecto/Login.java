@@ -43,7 +43,7 @@ public class Login extends javax.swing.JFrame {
             diseño.trasparenciaButton(Btn_Iniciar_sesion,2);
             
                                     //CREAR UN PLACEHOLDER
-            TextPrompt TextoFondo1 = new TextPrompt("Telefono, Usuario o Correo Electronico", Tf_usuario);
+            TextPrompt TextoFondo1 = new TextPrompt("Usuario", Tf_usuario);
             TextPrompt TextoFondo2 = new TextPrompt("Contraseña", Pw_contraseña);
            
         }
@@ -70,8 +70,6 @@ public class ClaseOrigen {
         L_logo_meta = new javax.swing.JLabel();
         L_logo_insta = new javax.swing.JLabel();
         L_fondo_Lg = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        BackUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -141,35 +139,6 @@ public class ClaseOrigen {
         Panel_fondo.add(L_logo_insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 60, 60));
         Panel_fondo.add(L_fondo_Lg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-
-        BackUser.setBorder(null);
-        BackUser.setBorderPainted(false);
-        BackUser.setContentAreaFilled(false);
-        BackUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackUserActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(BackUser)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(BackUser)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        Panel_fondo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 410, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -183,12 +152,6 @@ public class ClaseOrigen {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BackUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackUserActionPerformed
-        Login abrir=new Login();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BackUserActionPerformed
 
     private void Btn_crear_cuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_crear_cuentaActionPerformed
         Create_account abrir=new Create_account();
@@ -270,7 +233,6 @@ public class ClaseOrigen {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackUser;
     private javax.swing.JButton Btn_Iniciar_sesion;
     private javax.swing.JButton Btn_cambiar_contraseña;
     private javax.swing.JButton Btn_crear_cuenta;
@@ -281,6 +243,5 @@ public class ClaseOrigen {
     private javax.swing.JPanel Panel_fondo;
     private javax.swing.JPasswordField Pw_contraseña;
     private javax.swing.JTextField Tf_usuario;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

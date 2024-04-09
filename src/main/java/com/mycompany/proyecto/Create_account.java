@@ -1,4 +1,5 @@
 package com.mycompany.proyecto;
+import static com.mycompany.proyecto.Login.ClaseOrigen.BDusuario;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +18,7 @@ public class Create_account extends javax.swing.JFrame {
     Imagenes Img = new Imagenes();
     
         public Create_account() {
+         
             //BOTONES REDODNEADOS
             diseño.BordesRedondeados(30, 100);  
             
@@ -40,6 +42,7 @@ public class Create_account extends javax.swing.JFrame {
             
            
         }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -180,7 +183,9 @@ public class Create_account extends javax.swing.JFrame {
     }//GEN-LAST:event_Pw_Crear_contraseñaActionPerformed
 
     private void Btn_Crear_CuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Crear_CuentaActionPerformed
-        
+           //////////VARIABLE COMPARTIDA (pasa el a USER)
+            BDusuario=Tf_nom_usuario.getText();
+            //////////////////////////////////////////////
         //int edad=54;
        String nombre = Tf_Nombre2.getText();
        String fechaStr = Tf_Date.getText();

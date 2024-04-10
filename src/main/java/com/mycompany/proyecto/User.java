@@ -17,6 +17,11 @@ public class User extends javax.swing.JFrame {
     Diseño_objetos diseño = new Diseño_objetos();
   
     public User() {
+         super("Mi Ventana");
+            setSize(700, 410);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setResizable(false); // Evitar que el usuario modifique el tamaño
+            setVisible(true);
         
         //////////VARIABLE COMPARTIDA (pasa el dato desde LOGIN)
         initComponents();
@@ -77,7 +82,7 @@ public class User extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(400, 700));
+        setPreferredSize(new java.awt.Dimension(410, 700));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -301,8 +306,8 @@ public class User extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

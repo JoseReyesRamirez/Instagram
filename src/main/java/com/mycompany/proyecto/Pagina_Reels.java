@@ -144,7 +144,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -158,7 +158,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 OpcionesActionPerformed(evt);
             }
         });
-        jPanel2.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 60, 60));
+        jPanel2.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 550, 60, 60));
 
         Camara.setForeground(new java.awt.Color(242, 242, 242));
         Camara.setBorder(null);
@@ -180,7 +180,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 ComentariosActionPerformed(evt);
             }
         });
-        jPanel2.add(Comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 60, 50));
+        jPanel2.add(Comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 60, 50));
 
         Compartir.setForeground(new java.awt.Color(242, 242, 242));
         Compartir.setBorder(null);
@@ -191,7 +191,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 CompartirActionPerformed(evt);
             }
         });
-        jPanel2.add(Compartir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 40, 40));
+        jPanel2.add(Compartir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 40, 40));
 
         Descripcion.setText("Descripcion del video #####################");
         jPanel2.add(Descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 280, -1));
@@ -211,7 +211,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 LikeActionPerformed(evt);
             }
         });
-        jPanel2.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 40, 40));
+        jPanel2.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Reels");

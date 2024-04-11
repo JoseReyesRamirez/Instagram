@@ -177,7 +177,7 @@ public class ClaseOrigen {
  
         try {
              Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            String url = "jdbc:ucanaccess://" + ".\\DB_Instagram.accdb"; //Conectamos base de datos;
+            String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
             conn = DriverManager.getConnection(url);
  
              String query = "SELECT * FROM Usuarios WHERE Username = ? AND Contraseña = ?";

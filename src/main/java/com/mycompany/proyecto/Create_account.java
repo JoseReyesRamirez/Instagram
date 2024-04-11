@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 public class Create_account extends javax.swing.JFrame {
 
@@ -23,7 +24,9 @@ public class Create_account extends javax.swing.JFrame {
             diseño.BordesRedondeados(30, 100);  
             
             initComponents();
-            
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setResizable(false); // Evitar que el usuario modifique el tamaño
+            setSize(425, 730);
             //IMAGENES EN JLABELS
             this.setLocationRelativeTo(this);
             Img.SetImageLabel(L_fondo_CA, "src/main/java/imagenes/Fondo_Login.png");

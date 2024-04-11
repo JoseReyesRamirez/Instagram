@@ -17,14 +17,16 @@ public class User extends javax.swing.JFrame {
     Diseño_objetos diseño = new Diseño_objetos();
   
     public User() {
-         super("Mi Ventana");
-            setSize(700, 410);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setResizable(false); // Evitar que el usuario modifique el tamaño
-            setVisible(true);
+         super("INSTAGRAM");
+
+            
+            //setVisible(true);
         
         //////////VARIABLE COMPARTIDA (pasa el dato desde LOGIN)
         initComponents();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false); // Evitar que el usuario modifique el tamaño
+        setSize(425, 730);
         String datoRecibido = Login.ClaseOrigen.BDusuario;
         String texto;
         texto= Login.ClaseOrigen.BDusuario;
@@ -82,7 +84,9 @@ public class User extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setFocusCycleRoot(false);
         setPreferredSize(new java.awt.Dimension(410, 700));
+        setResizable(false);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -312,10 +316,10 @@ public class User extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();

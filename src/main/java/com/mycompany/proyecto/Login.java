@@ -22,14 +22,15 @@ public class Login extends javax.swing.JFrame {
     
         public Login() {
             super("Mi Ventana");
-            setSize(700, 400);
+            
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setResizable(false); // Evitar que el usuario modifique el tamaño
-            setVisible(true);
+            //setVisible(true);
             //BOTONES REDODNEADOS
             diseño.BordesRedondeados(30, 100);  
             
             initComponents();
+            setSize(425, 730);
             //trasparenciaButton();
      
             //IMAGENES EN JLABELS

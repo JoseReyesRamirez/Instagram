@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFrame;
 
 public class Pagina_Inicio extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
@@ -15,7 +16,9 @@ public class Pagina_Inicio extends javax.swing.JFrame {
     public Pagina_Inicio() {
        
         initComponents();
-        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false); // Evitar que el usuario modifique el tamaño
+        setSize(425, 730);
         //IMAGENES EN JLABELS
         this.setLocationRelativeTo(this);
         Img.SetImageLabel(fondolbl, "src/main/java/imagenes/Fondo_Login.png");

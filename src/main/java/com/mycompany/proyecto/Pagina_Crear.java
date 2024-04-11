@@ -1,12 +1,16 @@
 
 package com.mycompany.proyecto;
 
+import javax.swing.JFrame;
+
 public class Pagina_Crear extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
     public Pagina_Crear() {
         initComponents();
-        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false); // Evitar que el usuario modifique el tamaño
+        setSize(425, 730);
          //IMAGENES EN JLABELS
         this.setLocationRelativeTo(this);
         Img.SetImageLabel(L_Fondo, "src/main/java/imagenes/Fondo_Login.png");

@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyecto;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Juan Fileto
@@ -14,7 +16,9 @@ public class Notificaciones extends javax.swing.JFrame {
     
     public Notificaciones() {
         initComponents();
-        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false); // Evitar que el usuario modifique el tamaño
+        setSize(425, 730);
         //IMAGENES EN BOTONES
         this.setLocationRelativeTo(this);
         Imgn.SetImageButton(regresarbt, "src/main/java/imagenes/Regresar.png");

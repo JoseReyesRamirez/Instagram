@@ -123,7 +123,7 @@ public class Buscar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//1234567879
     private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
         Pagina_Inicio abrir = new Pagina_Inicio();
         abrir.setVisible(true);

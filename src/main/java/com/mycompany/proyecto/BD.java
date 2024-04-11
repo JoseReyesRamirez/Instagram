@@ -26,7 +26,7 @@ public class BD {
     public Statement Get_conn(){
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); 
-            String url = "jdbc:ucanaccess://" + ".\\DB_Instagram.accdb"; //Conectamos base de datos
+            String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb"; //Conectamos base de datos
             Connection con = DriverManager.getConnection(url);
             Statement stm = con.createStatement();
             return stm;

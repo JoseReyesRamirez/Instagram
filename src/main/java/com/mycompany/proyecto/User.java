@@ -59,12 +59,6 @@ public class User extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         usuario = new javax.swing.JTextField();
         configuracionbt = new javax.swing.JButton();
-        casitabt = new javax.swing.JButton();
-        lupabt = new javax.swing.JButton();
-        crearbt = new javax.swing.JButton();
-        reelsbt = new javax.swing.JButton();
-        perfilbt = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         contseguidos = new javax.swing.JTextField();
@@ -76,6 +70,12 @@ public class User extends javax.swing.JFrame {
         contpublicaciones = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         contsegudores = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        casitabt = new javax.swing.JButton();
+        lupabt = new javax.swing.JButton();
+        crearbt = new javax.swing.JButton();
+        reelsbt = new javax.swing.JButton();
+        perfilbt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -125,18 +125,6 @@ public class User extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 50));
-
-        casitabt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                casitabtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(casitabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 900, 30, 20));
-        jPanel1.add(lupabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 900, 30, 20));
-        jPanel1.add(crearbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 900, 30, 20));
-        jPanel1.add(reelsbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 900, 30, 20));
-        jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 900, 30, 20));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 883, 410, 50));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
@@ -244,17 +232,109 @@ public class User extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 53, 410, 830));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        casitabt.setBorder(null);
+        casitabt.setBorderPainted(false);
+        casitabt.setContentAreaFilled(false);
+        casitabt.setDefaultCapable(false);
+        casitabt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casitabtActionPerformed(evt);
+            }
+        });
+
+        lupabt.setBorder(null);
+        lupabt.setBorderPainted(false);
+        lupabt.setContentAreaFilled(false);
+        lupabt.setDefaultCapable(false);
+        lupabt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lupabtActionPerformed(evt);
+            }
+        });
+
+        crearbt.setBorder(null);
+        crearbt.setBorderPainted(false);
+        crearbt.setContentAreaFilled(false);
+        crearbt.setDefaultCapable(false);
+        crearbt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearbtActionPerformed(evt);
+            }
+        });
+
+        reelsbt.setBorder(null);
+        reelsbt.setBorderPainted(false);
+        reelsbt.setContentAreaFilled(false);
+        reelsbt.setDefaultCapable(false);
+        reelsbt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reelsbtActionPerformed(evt);
+            }
+        });
+
+        perfilbt.setBorder(null);
+        perfilbt.setBorderPainted(false);
+        perfilbt.setContentAreaFilled(false);
+        perfilbt.setDefaultCapable(false);
+        perfilbt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilbtActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(casitabt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(lupabt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(crearbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(reelsbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(perfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(perfilbt, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(reelsbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(casitabt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lupabt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 933, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 886, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 897, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -264,13 +344,44 @@ public class User extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contpublicacionesActionPerformed
 
-    private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_casitabtActionPerformed
-
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usuarioActionPerformed
+
+    private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
+        // TODO add your handling code here:
+        Pagina_Inicio abrir = new Pagina_Inicio();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_casitabtActionPerformed
+
+    private void lupabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabtActionPerformed
+        // TODO add your handling code here:
+        Buscar abrir = new Buscar();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lupabtActionPerformed
+
+    private void crearbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtActionPerformed
+        // TODO add your handling code here:
+        Pagina_Crear abrir = new Pagina_Crear();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_crearbtActionPerformed
+
+    private void reelsbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reelsbtActionPerformed
+        // TODO add your handling code here:
+        Pagina_Reels abrir = new Pagina_Reels();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_reelsbtActionPerformed
+
+    private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
+        // TODO add your handling code here:
+        User abrir = new User();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_perfilbtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,8 +431,8 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;

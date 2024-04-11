@@ -29,7 +29,7 @@ public class BDconsultas {
         } catch (SQLException ex) {
             Logger.getLogger(Create_account.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.print("Insert\n");
+        System.out.print("Insert.\n");
     }
     public ImageIcon extraerImg(){
          BD bd = new BD();
@@ -55,7 +55,7 @@ public class BDconsultas {
         return null;
     }
     
-    
+    //23161651
     public void Select(String b, String c){
          BD bd = new BD();
         Statement stm=bd.Get_conn();

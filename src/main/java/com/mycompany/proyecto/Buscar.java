@@ -38,6 +38,8 @@ public class Buscar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        lupabt1 = new javax.swing.JButton();
+        textField2 = new java.awt.TextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         casitabt = new javax.swing.JButton();
@@ -48,15 +50,36 @@ public class Buscar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lupabt1.setBorder(null);
+        lupabt1.setBorderPainted(false);
+        lupabt1.setContentAreaFilled(false);
+        lupabt1.setDefaultCapable(false);
+        lupabt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lupabt1ActionPerformed(evt);
+            }
+        });
+
+        textField2.setText("Buscar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lupabt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 35, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lupabt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -213,6 +236,10 @@ public class Buscar extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
 
+    private void lupabt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lupabt1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,7 +283,9 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton lupabt;
+    private javax.swing.JButton lupabt1;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;
+    private java.awt.TextField textField2;
     // End of variables declaration//GEN-END:variables
 }

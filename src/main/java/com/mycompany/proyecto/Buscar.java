@@ -19,6 +19,8 @@ public class Buscar extends javax.swing.JFrame {
         setSize(425, 730);
         //IMAGENES EN JLABELS
         this.setLocationRelativeTo(this);
+        
+            var TextoFondo1 = new TextPrompt("Buscar", jTextField1);
 
         
         //IMAGENES EN BOTONES
@@ -33,7 +35,7 @@ public class Buscar extends javax.swing.JFrame {
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
         //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
-        //diseño.trasparenciaButton(jTextField1,2);
+        TextPrompt TextoFondo = new TextPrompt("Nombre", jTextField1);
     }
 
     /**
@@ -69,7 +71,6 @@ public class Buscar extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Buscar");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);

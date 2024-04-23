@@ -7,7 +7,12 @@ import javax.swing.JFrame;
 public class Buscar extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
+        
+        Diseño_objetos diseño = new Diseño_objetos();
+
     public Buscar() {
+        diseño.BordesRedondeados(30, 100);  
+
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
@@ -20,11 +25,15 @@ public class Buscar extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
                 //IMAGENES EN BOTONES
         this.setLocationRelativeTo(this);
+        Imgn.SetImageButton(lupabt1, "src/main/java/imagenes/Lupa.png");
         Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
         Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
+        
+        //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
+        //diseño.trasparenciaButton(jTextField1,2);
     }
 
     /**
@@ -39,7 +48,7 @@ public class Buscar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lupabt1 = new javax.swing.JButton();
-        textField2 = new java.awt.TextField();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         casitabt = new javax.swing.JButton();
@@ -60,7 +69,12 @@ public class Buscar extends javax.swing.JFrame {
             }
         });
 
-        textField2.setText("Buscar");
+        jTextField1.setText("Buscar");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -69,17 +83,18 @@ public class Buscar extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lupabt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 11, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lupabt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(lupabt1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -240,6 +255,10 @@ public class Buscar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lupabt1ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,10 +301,10 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lupabt;
     private javax.swing.JButton lupabt1;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;
-    private java.awt.TextField textField2;
     // End of variables declaration//GEN-END:variables
 }

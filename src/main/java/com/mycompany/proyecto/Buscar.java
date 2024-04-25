@@ -34,9 +34,10 @@ public class Buscar extends javax.swing.JFrame {
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         Imgn.SetImageButton(insta1, "src/main/java/imagenes/insta1.png");
+        Imgn.SetImageButton(insta2, "src/main/java/imagenes/insta2.png");
         
         //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
-        TextPrompt TextoFondo = new TextPrompt("Nombre", jTextField1);
+        TextPrompt TextoFondo = new TextPrompt("Buscar", jTextField1);
     }
 
     /**
@@ -54,7 +55,7 @@ public class Buscar extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         insta1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        insta2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         casitabt = new javax.swing.JButton();
         lupabt = new javax.swing.JButton();
@@ -103,7 +104,7 @@ public class Buscar extends javax.swing.JFrame {
 
         insta1.setText("jButton1");
 
-        jButton1.setText("jButton1");
+        insta2.setText("jButton1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -113,7 +114,7 @@ public class Buscar extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(insta1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(insta2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -121,7 +122,7 @@ public class Buscar extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(insta2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(insta1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(438, Short.MAX_VALUE))
         );
@@ -291,7 +292,10 @@ public class Buscar extends javax.swing.JFrame {
     private void insta1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
     }
-    
+
+    private void insta2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+    }
     /**
      * @param args the command line arguments
      */
@@ -331,7 +335,7 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
     private javax.swing.JButton insta1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton insta2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

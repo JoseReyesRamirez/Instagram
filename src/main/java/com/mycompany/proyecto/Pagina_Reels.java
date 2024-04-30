@@ -2,10 +2,7 @@
 package com.mycompany.proyecto;
 
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
-import javax.imageio.ImageIO;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -19,10 +16,11 @@ public class Pagina_Reels extends javax.swing.JFrame {
         ImageIcon[] gifs = {
         new ImageIcon("src/main/java/videos/Video_Reels_1.gif"),
         new ImageIcon("src/main/java/videos/Video_Reels_2.gif"),
-        new ImageIcon("src/main/java/videos/Video_Reels_1.gif"),
+        new ImageIcon("src/main/java/videos/Video_Reels_3.gif"),
         // Agrega más imágenes aquí
         };*/
         
+        //CAMBIAR Y MOSTRAR GIFTS
         ImageIcon[] gifs;
         private int indice = 0;
         
@@ -35,7 +33,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
        // Img.SetImageLabel(L_Fondo, "src/main/java/imagenes/Fondo_Login.png");
         
-        //IMAGENES EN BOTONES
+        //IMAGENES EN BOTONES DE DESPLAZAMIENTO
         this.setLocationRelativeTo(this);
         Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
@@ -43,7 +41,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
-        
+        //IMAGENES DE BOTONES ACCIONES
         Imgn.SetImageButton(Like, "src/main/java/imagenes/Corazon_Reels.png");
         Imgn.SetImageButton(Comentarios, "src/main/java/imagenes/Comentarios_Reels.png");
         Imgn.SetImageButton(Compartir, "src/main/java/imagenes/Enviar_Reels.png");
@@ -58,6 +56,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         L_video.setIcon(imageIcon);
         */
         
+        //CARGAR, ESCALAR Y CAMBIAR GIFTS
         // Carga y redimensiona los gifs
         String[] urls = {
             "src/main/java/videos/Video_Reels_1.gif",

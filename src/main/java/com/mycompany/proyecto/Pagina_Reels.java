@@ -2,6 +2,7 @@
 package com.mycompany.proyecto;
 
 import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -9,6 +10,20 @@ import javax.swing.JFrame;
 public class Pagina_Reels extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
+        
+        /*
+        //CAMBIAR GIFS
+        ImageIcon[] gifs = {
+        new ImageIcon("src/main/java/videos/Video_Reels_1.gif"),
+        new ImageIcon("src/main/java/videos/Video_Reels_2.gif"),
+        new ImageIcon("src/main/java/videos/Video_Reels_3.gif"),
+        // Agrega más imágenes aquí
+        };*/
+        
+        //CAMBIAR Y MOSTRAR GIFTS
+        ImageIcon[] gifs;
+        private int indice = 0;
+        
     public Pagina_Reels() {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,7 +33,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
        // Img.SetImageLabel(L_Fondo, "src/main/java/imagenes/Fondo_Login.png");
         
-        //IMAGENES EN BOTONES
+        //IMAGENES EN BOTONES DE DESPLAZAMIENTO
         this.setLocationRelativeTo(this);
         Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
@@ -26,20 +41,40 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
-        
+        //IMAGENES DE BOTONES ACCIONES
         Imgn.SetImageButton(Like, "src/main/java/imagenes/Corazon_Reels.png");
         Imgn.SetImageButton(Comentarios, "src/main/java/imagenes/Comentarios_Reels.png");
         Imgn.SetImageButton(Compartir, "src/main/java/imagenes/Enviar_Reels.png");
         Imgn.SetImageButton(Opciones, "src/main/java/imagenes/3puntos_Reels.png");
         Imgn.SetImageButton(Camara, "src/main/java/imagenes/Agregar_Reels.png");
         
-        
+        /*
         ImageIcon imageIcon = new ImageIcon("src/main/java/videos/Video_Reels_1.gif");
         Image image = imageIcon.getImage(); // transformalo
         Image newimg = image.getScaledInstance(L_video.getWidth(), L_video.getHeight(),  Image.SCALE_DEFAULT); // escala esto
         imageIcon = new ImageIcon(newimg);  // transformalo de nuevo
         L_video.setIcon(imageIcon);
-
+        */
+        
+        //CARGAR, ESCALAR Y CAMBIAR GIFTS
+        // Carga y redimensiona los gifs
+        String[] urls = {
+            "src/main/java/videos/Video_Reels_1.gif",
+            "src/main/java/videos/Video_Reels_2.gif",
+            "src/main/java/videos/Video_Reels_3.gif",
+            "src/main/java/videos/Video_Reels_4.gif",
+            "src/main/java/videos/Video_Reels_5.gif",           
+            // Agrega más imágenes aquí
+        };
+        gifs = new ImageIcon[urls.length];
+        for (int i = 0; i < urls.length; i++) {
+            ImageIcon imageIcon = new ImageIcon(urls[i]);
+            Image image = imageIcon.getImage(); // transformalo
+            Image newimg = image.getScaledInstance(Cambiar_Reels.getWidth(), Cambiar_Reels.getHeight(), Image.SCALE_DEFAULT); // escala esto
+            gifs[i] = new ImageIcon(newimg);  // transformalo de nuevo
+        }
+        
+        Cambiar_Reels.setIcon(gifs[0]); // Establece la imagen inicial del botón
     }
 
 
@@ -55,6 +90,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         reelsbt = new javax.swing.JButton();
         perfilbt = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        Like = new javax.swing.JButton();
         Opciones = new javax.swing.JButton();
         Camara = new javax.swing.JButton();
         Comentarios = new javax.swing.JButton();
@@ -62,8 +98,8 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Descripcion = new javax.swing.JLabel();
         Nom_usuario = new javax.swing.JLabel();
         Foto_Perfil = new javax.swing.JLabel();
-        Like = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Logo_Reels = new javax.swing.JLabel();
+        Cambiar_Reels = new javax.swing.JButton();
         L_video = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -156,10 +192,26 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Like.setForeground(new java.awt.Color(242, 242, 242));
+        Like.setBorder(null);
+        Like.setContentAreaFilled(false);
+        Like.setDefaultCapable(false);
+        Like.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LikeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 60, 60));
+
         Opciones.setForeground(new java.awt.Color(242, 242, 242));
         Opciones.setBorder(null);
         Opciones.setContentAreaFilled(false);
         Opciones.setDefaultCapable(false);
+        Opciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcionesActionPerformed(evt);
+            }
+        });
         jPanel1.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 40, 40));
 
         Camara.setForeground(new java.awt.Color(242, 242, 242));
@@ -185,28 +237,36 @@ public class Pagina_Reels extends javax.swing.JFrame {
         });
         jPanel1.add(Compartir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 50, 50));
 
+        Descripcion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Descripcion.setForeground(new java.awt.Color(255, 255, 255));
         Descripcion.setText("Descripcion del video #####################");
         jPanel1.add(Descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 280, -1));
 
+        Nom_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Nom_usuario.setForeground(new java.awt.Color(255, 255, 255));
         Nom_usuario.setText("Usuario");
         jPanel1.add(Nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, -1));
 
+        Foto_Perfil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Foto_Perfil.setForeground(new java.awt.Color(255, 255, 255));
         Foto_Perfil.setText("Foto");
-        jPanel1.add(Foto_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 30, 30));
+        jPanel1.add(Foto_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 30, 20));
 
-        Like.setForeground(new java.awt.Color(242, 242, 242));
-        Like.setBorder(null);
-        Like.setContentAreaFilled(false);
-        Like.setDefaultCapable(false);
-        jPanel1.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 60, 60));
+        Logo_Reels.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Logo_Reels.setForeground(new java.awt.Color(255, 255, 255));
+        Logo_Reels.setText("Reels");
+        jPanel1.add(Logo_Reels, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 40));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Reels");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 40));
+        Cambiar_Reels.setForeground(new java.awt.Color(242, 242, 242));
+        Cambiar_Reels.setBorder(null);
+        Cambiar_Reels.setContentAreaFilled(false);
+        Cambiar_Reels.setDefaultCapable(false);
+        Cambiar_Reels.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cambiar_ReelsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Cambiar_Reels, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
         jPanel1.add(L_video, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
@@ -270,9 +330,20 @@ public class Pagina_Reels extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CompartirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void Cambiar_ReelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cambiar_ReelsActionPerformed
+        indice = (indice + 1) % gifs.length;
+        Cambiar_Reels.setIcon(gifs[indice]);
+    }//GEN-LAST:event_Cambiar_ReelsActionPerformed
+
+    private void LikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LikeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LikeActionPerformed
+
+    private void OpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcionesActionPerformed
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -307,17 +378,18 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Camara;
+    private javax.swing.JButton Cambiar_Reels;
     private javax.swing.JButton Comentarios;
     private javax.swing.JButton Compartir;
     private javax.swing.JLabel Descripcion;
     private javax.swing.JLabel Foto_Perfil;
     private javax.swing.JLabel L_video;
     private javax.swing.JButton Like;
+    private javax.swing.JLabel Logo_Reels;
     private javax.swing.JLabel Nom_usuario;
     private javax.swing.JButton Opciones;
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

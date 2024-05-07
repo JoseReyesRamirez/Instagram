@@ -2,6 +2,9 @@
 package com.mycompany.proyecto;
 
 import java.awt.Image;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -10,6 +13,7 @@ import javax.swing.JFrame;
 public class Pagina_Reels extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
+        BDconsultas consultas = new BDconsultas();
         
         /*
         //CAMBIAR GIFS
@@ -24,11 +28,17 @@ public class Pagina_Reels extends javax.swing.JFrame {
         ImageIcon[] gifs;
         private int indice = 0;
         
+        //user
+        String[] usernames;
+        
+        
     public Pagina_Reels() {
         initComponents();
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
         setSize(425, 730);
+        
         //IMAGENES EN JLABELS
         this.setLocationRelativeTo(this);
        // Img.SetImageLabel(L_Fondo, "src/main/java/imagenes/Fondo_Login.png");
@@ -66,6 +76,12 @@ public class Pagina_Reels extends javax.swing.JFrame {
             "src/main/java/videos/Video_Reels_5.gif",           
             // Agrega más imágenes aquí
         };
+        
+        //cargarNombresDeUsuario();
+        usernames = new String[] {"Usuario1", "user123", "instaFanatico", "user_insta", "photo_lover"};
+        
+        
+ 
         gifs = new ImageIcon[urls.length];
         for (int i = 0; i < urls.length; i++) {
             ImageIcon imageIcon = new ImageIcon(urls[i]);
@@ -75,8 +91,9 @@ public class Pagina_Reels extends javax.swing.JFrame {
         }
         
         Cambiar_Reels.setIcon(gifs[0]); // Establece la imagen inicial del botón
+         Nom_usuario.setText(usernames[0]); // Establece el nombre de usuario inicial
+        
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -333,6 +350,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
     private void Cambiar_ReelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cambiar_ReelsActionPerformed
         indice = (indice + 1) % gifs.length;
         Cambiar_Reels.setIcon(gifs[indice]);
+        Nom_usuario.setText(usernames[indice]); // Cambia el nombre de usuario
     }//GEN-LAST:event_Cambiar_ReelsActionPerformed
 
     private void LikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LikeActionPerformed

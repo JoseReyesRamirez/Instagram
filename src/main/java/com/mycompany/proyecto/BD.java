@@ -30,7 +30,7 @@ public class BD {
             Connection con = DriverManager.getConnection(url);
             Statement stm = con.createStatement();
             return stm;
-            
+            //aaaa
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BD.class.getName()).log(Level.SEVERE, null, ex);
 

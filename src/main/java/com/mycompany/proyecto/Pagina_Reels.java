@@ -54,7 +54,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Imgn.SetImageButton(Opciones, "src/main/java/imagenes/3puntos_Reels.png");
         Imgn.SetImageButton(Camara, "src/main/java/imagenes/Agregar_Reels.png");
         
-        Img.SetImageLabel(Foto_Perfil, "src/main/java/imagenes/Perfil_reels_1.png");
+        Img.SetImageLabel(Foto_Perfil, "src/main/java/imagenes/Perfil_reels.png");
         
         //CARGAR, ESCALAR Y CAMBIAR GIFTS
         // Carga y redimensiona los gifs

@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -31,6 +33,26 @@ public class BDconsultas {
         }
         System.out.print("Insert.\n");
     }
+    
+    
+    public void crearPub(String desc, String path){
+         BD bd = new BD();
+        Statement stm=bd.Get_conn();
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String fechaac = dateTime.format(formatters);
+        String datos = "'"+fechaac+"','"+desc+"',1,'"+path+"'";
+        String query = "INSERT INTO Publicaciones (Fecha,Descripcion,IDUsuario, Path) VALUES ("+datos+")";
+        try {
+            stm.executeUpdate(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(BDconsultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(query);
+        
+        System.out.print("Insert.\n");
+    }
+    
     public ImageIcon extraerImg(){
          BD bd = new BD();
         Statement stm=bd.Get_conn();

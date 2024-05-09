@@ -1,13 +1,16 @@
 
 package com.mycompany.proyecto;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class Pagina_Crear extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
+        Diseño_objetos diseño = new Diseño_objetos();
     public Pagina_Crear() {
         initComponents();
+        diseño.BordesRedondeados(30, 100);  
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
         setSize(425, 730);
@@ -22,6 +25,14 @@ public class Pagina_Crear extends javax.swing.JFrame {
         Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
+        
+        
+        diseño.trasparenciaButton(Btn_Crear_Pub,2);
+        diseño.trasparenciaButton(Btn_cancelar,2);
+            
+                                    //CREAR UN PLACEHOLDER
+            TextPrompt TextoFondo1 = new TextPrompt("Descripcion de la publicacion", Tf_desc);
+            TextPrompt TextoFondo2 = new TextPrompt("Direccion de la imagen o video", Tf_path);
     }
 
 
@@ -30,6 +41,12 @@ public class Pagina_Crear extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        NoPath = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Tf_desc = new javax.swing.JTextField();
+        Tf_path = new javax.swing.JTextField();
+        Btn_Crear_Pub = new javax.swing.JButton();
+        Btn_cancelar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         casitabt = new javax.swing.JButton();
         lupabt = new javax.swing.JButton();
@@ -41,6 +58,59 @@ public class Pagina_Crear extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        NoPath.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NoPath.setForeground(new java.awt.Color(255, 255, 255));
+        NoPath.setText("No has subido ninguna imagen!");
+        NoPath.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                NoPathComponentHidden(evt);
+            }
+        });
+        jPanel1.add(NoPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 260, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 48)); // NOI18N
+        jLabel1.setText("Crear publicación");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 410, 80));
+
+        Tf_desc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_desc.setToolTipText("");
+        Tf_desc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_descActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Tf_desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 370, 240));
+
+        Tf_path.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_path.setToolTipText("");
+        Tf_path.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_pathActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Tf_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 370, 60));
+
+        Btn_Crear_Pub.setBackground(new java.awt.Color(0, 102, 255));
+        Btn_Crear_Pub.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Btn_Crear_Pub.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_Crear_Pub.setText("Subir Publicación");
+        Btn_Crear_Pub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Crear_PubActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Btn_Crear_Pub, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 230, 60));
+
+        Btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Btn_cancelar.setForeground(new java.awt.Color(0, 102, 255));
+        Btn_cancelar.setText("Cancelar");
+        Btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_cancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 120, 57));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 410, 50));
 
         casitabt.setBorder(null);
@@ -103,7 +173,7 @@ public class Pagina_Crear extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,6 +217,47 @@ public class Pagina_Crear extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
 
+    private void Tf_descActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_descActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_descActionPerformed
+
+    private void Tf_pathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_pathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_pathActionPerformed
+
+    private void Btn_Crear_PubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Crear_PubActionPerformed
+       String direccion = Tf_path.getText();
+       String descripcion = Tf_desc.getText();
+       
+       if(direccion != ""){
+        BDconsultas temp = new BDconsultas();
+        temp.crearPub(descripcion, direccion);
+        User abrir=new User();
+        abrir.setVisible(true);
+        this.setVisible(false);
+       } else {
+        NoPath.setForeground(Color.yellow);
+       }
+        
+        
+        
+        
+        ///
+        Pagina_Inicio abrir=new Pagina_Inicio();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_Crear_PubActionPerformed
+
+    private void Btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_cancelarActionPerformed
+        Pagina_Inicio abrir=new Pagina_Inicio();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_cancelarActionPerformed
+
+    private void NoPathComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_NoPathComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoPathComponentHidden
+
     /**
      * @param args the command line arguments
      */
@@ -173,6 +284,7 @@ public class Pagina_Crear extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Pagina_Crear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -183,9 +295,15 @@ public class Pagina_Crear extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Crear_Pub;
+    private javax.swing.JButton Btn_cancelar;
     private javax.swing.JLabel L_Fondo;
+    private javax.swing.JLabel NoPath;
+    private javax.swing.JTextField Tf_desc;
+    private javax.swing.JTextField Tf_path;
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton lupabt;

@@ -336,7 +336,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
     private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
         // TODO add your handling code here:
-        User abrir = new User();
+        Pagina_User abrir = new Pagina_User();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed

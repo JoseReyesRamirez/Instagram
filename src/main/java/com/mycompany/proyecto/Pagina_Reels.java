@@ -179,16 +179,16 @@ public class Pagina_Reels extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(casitabt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(lupabt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(crearbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(reelsbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(perfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addComponent(casitabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(lupabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(crearbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(reelsbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(perfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,9 +196,9 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(perfilbt, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(reelsbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reelsbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(casitabt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(crearbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearbt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(lupabt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
@@ -216,7 +216,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 LikeActionPerformed(evt);
             }
         });
-        jPanel1.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 60, 60));
+        jPanel1.add(Like, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 50, 50));
 
         Opciones.setForeground(new java.awt.Color(242, 242, 242));
         Opciones.setBorder(null);
@@ -227,19 +227,24 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 OpcionesActionPerformed(evt);
             }
         });
-        jPanel1.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 40, 40));
+        jPanel1.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 30, 30));
 
         Camara.setForeground(new java.awt.Color(242, 242, 242));
         Camara.setBorder(null);
         Camara.setContentAreaFilled(false);
         Camara.setDefaultCapable(false);
-        jPanel1.add(Camara, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 50, 50));
+        Camara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CamaraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Camara, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 40));
 
         Comentarios.setForeground(new java.awt.Color(242, 242, 242));
         Comentarios.setBorder(null);
         Comentarios.setContentAreaFilled(false);
         Comentarios.setDefaultCapable(false);
-        jPanel1.add(Comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 50, 50));
+        jPanel1.add(Comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 40, 40));
 
         Compartir.setForeground(new java.awt.Color(242, 242, 242));
         Compartir.setBorder(null);
@@ -250,7 +255,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
                 CompartirActionPerformed(evt);
             }
         });
-        jPanel1.add(Compartir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 50, 50));
+        jPanel1.add(Compartir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 40, 40));
 
         Descripcion_reels.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Descripcion_reels.setForeground(new java.awt.Color(255, 255, 255));
@@ -359,6 +364,10 @@ public class Pagina_Reels extends javax.swing.JFrame {
     private void OpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcionesActionPerformed
+
+    private void CamaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamaraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CamaraActionPerformed
 
 
     public static void main(String args[]) {

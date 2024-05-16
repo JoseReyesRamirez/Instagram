@@ -14,15 +14,13 @@ public class Pagina_Crear extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
         setSize(425, 730);
-         //IMAGENES EN JLABELS
-        this.setLocationRelativeTo(this);
-        Img.SetImageLabel(L_Fondo, "src/main/java/imagenes/Fondo_Login.png");
+
         
         //IMAGENES EN BOTONES
         this.setLocationRelativeTo(this);
-        Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
+        Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
-        Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
+        Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear_Inicio.png");
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
@@ -30,9 +28,9 @@ public class Pagina_Crear extends javax.swing.JFrame {
         diseño.trasparenciaButton(Btn_Crear_Pub,2);
         diseño.trasparenciaButton(Btn_cancelar,2);
             
-                                    //CREAR UN PLACEHOLDER
-            TextPrompt TextoFondo1 = new TextPrompt("Descripcion de la publicacion", Tf_desc);
-            TextPrompt TextoFondo2 = new TextPrompt("Direccion de la imagen o video", Tf_path);
+        //CREAR UN PLACEHOLDER
+        TextPrompt TextoFondo1 = new TextPrompt("Descripcion de la publicacion", Tf_desc);
+        TextPrompt TextoFondo2 = new TextPrompt("Direccion de la imagen o video", Tf_path);
     }
 
 
@@ -40,56 +38,35 @@ public class Pagina_Crear extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        NoPath = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        Btn_cancelar = new javax.swing.JButton();
+        Btn_Crear_Pub = new javax.swing.JButton();
         Tf_desc = new javax.swing.JTextField();
         Tf_path = new javax.swing.JTextField();
-        Btn_Crear_Pub = new javax.swing.JButton();
-        Btn_cancelar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        NoPath = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         casitabt = new javax.swing.JButton();
         lupabt = new javax.swing.JButton();
         crearbt = new javax.swing.JButton();
         reelsbt = new javax.swing.JButton();
         perfilbt = new javax.swing.JButton();
-        L_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(425, 700));
+        setPreferredSize(new java.awt.Dimension(425, 700));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        NoPath.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        NoPath.setForeground(new java.awt.Color(255, 255, 255));
-        NoPath.setText("No has subido ninguna imagen!");
-        NoPath.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                NoPathComponentHidden(evt);
-            }
-        });
-        jPanel1.add(NoPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 260, -1));
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 48)); // NOI18N
-        jLabel1.setText("Crear publicación");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 410, 80));
-
-        Tf_desc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_desc.setToolTipText("");
-        Tf_desc.addActionListener(new java.awt.event.ActionListener() {
+        Btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Btn_cancelar.setForeground(new java.awt.Color(0, 102, 255));
+        Btn_cancelar.setText("Cancelar");
+        Btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tf_descActionPerformed(evt);
+                Btn_cancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(Tf_desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 370, 240));
-
-        Tf_path.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Tf_path.setToolTipText("");
-        Tf_path.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tf_pathActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Tf_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 370, 60));
 
         Btn_Crear_Pub.setBackground(new java.awt.Color(0, 102, 255));
         Btn_Crear_Pub.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -100,18 +77,78 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 Btn_Crear_PubActionPerformed(evt);
             }
         });
-        jPanel1.add(Btn_Crear_Pub, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 230, 60));
 
-        Btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Btn_cancelar.setForeground(new java.awt.Color(0, 102, 255));
-        Btn_cancelar.setText("Cancelar");
-        Btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+        Tf_desc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_desc.setToolTipText("");
+        Tf_desc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_cancelarActionPerformed(evt);
+                Tf_descActionPerformed(evt);
             }
         });
-        jPanel1.add(Btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 120, 57));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 410, 50));
+
+        Tf_path.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tf_path.setToolTipText("");
+        Tf_path.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_pathActionPerformed(evt);
+            }
+        });
+
+        NoPath.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NoPath.setForeground(new java.awt.Color(255, 255, 255));
+        NoPath.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NoPath.setText("No has subido ninguna imagen!");
+        NoPath.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                NoPathComponentHidden(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 48)); // NOI18N
+        jLabel1.setText("Crear publicación");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NoPath, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(Btn_cancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                                .addComponent(Btn_Crear_Pub))
+                            .addComponent(Tf_path, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Tf_desc))
+                        .addGap(28, 28, 28))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(Tf_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(Tf_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(NoPath)
+                .addGap(51, 51, 51)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Crear_Pub)
+                    .addComponent(Btn_cancelar))
+                .addGap(105, 105, 105))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         casitabt.setBorder(null);
         casitabt.setBorderPainted(false);
@@ -122,7 +159,6 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 casitabtActionPerformed(evt);
             }
         });
-        jPanel1.add(casitabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 40, 30));
 
         lupabt.setBorder(null);
         lupabt.setBorderPainted(false);
@@ -133,7 +169,6 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 lupabtActionPerformed(evt);
             }
         });
-        jPanel1.add(lupabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 40, 30));
 
         crearbt.setBorder(null);
         crearbt.setBorderPainted(false);
@@ -144,7 +179,6 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 crearbtActionPerformed(evt);
             }
         });
-        jPanel1.add(crearbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 40, 30));
 
         reelsbt.setBorder(null);
         reelsbt.setBorderPainted(false);
@@ -155,7 +189,6 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 reelsbtActionPerformed(evt);
             }
         });
-        jPanel1.add(reelsbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 660, 40, 30));
 
         perfilbt.setBorder(null);
         perfilbt.setBorderPainted(false);
@@ -166,19 +199,38 @@ public class Pagina_Crear extends javax.swing.JFrame {
                 perfilbtActionPerformed(evt);
             }
         });
-        jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 40, 30));
-        jPanel1.add(L_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 700));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(casitabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(lupabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(crearbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(reelsbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(perfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(crearbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(perfilbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reelsbt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lupabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casitabt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 410, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,15 +349,14 @@ public class Pagina_Crear extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Crear_Pub;
     private javax.swing.JButton Btn_cancelar;
-    private javax.swing.JLabel L_Fondo;
     private javax.swing.JLabel NoPath;
     private javax.swing.JTextField Tf_desc;
     private javax.swing.JTextField Tf_path;
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton lupabt;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;

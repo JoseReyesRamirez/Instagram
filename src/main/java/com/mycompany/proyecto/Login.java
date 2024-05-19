@@ -165,7 +165,7 @@ public class ClaseOrigen {
     }//GEN-LAST:event_Btn_cambiar_contraseñaActionPerformed
 
     private void Btn_Iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Iniciar_sesionActionPerformed
-        String usuario = Tf_usuario.getText();
+       String usuario = Tf_usuario.getText();
         //////////VARIABLE COMPARTIDA (pasa el a USER)
         BDusuario=Tf_usuario.getText();
         /////////////////////////////////////////////
@@ -190,7 +190,8 @@ public class ClaseOrigen {
             if (rs.next()) {
                 NoAccount.setForeground(Color.white);
                 //JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso");
-                Pagina_Inicio abrir=new Pagina_Inicio();
+                Session session = new Session(BDusuario);
+                Pagina_Inicio abrir=new Pagina_Inicio(session.getUsername());
                 abrir.setVisible(true);
                 this.setVisible(false);
             } else {
@@ -208,6 +209,7 @@ public class ClaseOrigen {
                 ex.printStackTrace();
             }
         }
+                     
     }//GEN-LAST:event_Btn_Iniciar_sesionActionPerformed
 
     private void Pw_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pw_contraseñaActionPerformed

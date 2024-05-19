@@ -5,12 +5,14 @@ import javax.swing.JFrame;
 
 
 public class Buscar extends javax.swing.JFrame {
+    String user2;
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
         
         Diseño_objetos diseño = new Diseño_objetos();
 
-    public Buscar() {
+    public Buscar(String user) {
+        user2=user;
         diseño.BordesRedondeados(30, 100);  
 
         initComponents();
@@ -236,35 +238,35 @@ public class Buscar extends javax.swing.JFrame {
 
     private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
         // TODO add your handling code here:
-        Pagina_Inicio abrir = new Pagina_Inicio();
+        Pagina_Inicio abrir = new Pagina_Inicio(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_casitabtActionPerformed
 
     private void lupabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabtActionPerformed
         // TODO add your handling code here:
-        Buscar abrir = new Buscar();
+        Buscar abrir = new Buscar(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lupabtActionPerformed
 
     private void crearbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Crear abrir = new Pagina_Crear();
+        Pagina_Crear abrir = new Pagina_Crear(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_crearbtActionPerformed
 
     private void reelsbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reelsbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Reels abrir = new Pagina_Reels();
+        Pagina_Reels abrir = new Pagina_Reels(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_reelsbtActionPerformed
 
     private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
         // TODO add your handling code here:
-        Pagina_User abrir = new Pagina_User();
+        Pagina_User abrir = new Pagina_User(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
@@ -291,7 +293,7 @@ public class Buscar extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String user) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -318,7 +320,7 @@ public class Buscar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Buscar().setVisible(true);
+                new Buscar(user).setVisible(true);
             }
         });
     }

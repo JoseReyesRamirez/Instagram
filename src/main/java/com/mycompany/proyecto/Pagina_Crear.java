@@ -5,10 +5,12 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 public class Pagina_Crear extends javax.swing.JFrame {
+    String user2;
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
         Diseño_objetos diseño = new Diseño_objetos();
-    public Pagina_Crear() {
+    public Pagina_Crear(String user) {
+        user2=user;
         initComponents();
         diseño.BordesRedondeados(30, 100);  
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -236,35 +238,35 @@ public class Pagina_Crear extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
-        Pagina_Inicio abrir = new Pagina_Inicio();
+        Pagina_Inicio abrir = new Pagina_Inicio(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_casitabtActionPerformed
 
     private void lupabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabtActionPerformed
         // TODO add your handling code here:
-        Buscar abrir = new Buscar();
+        Buscar abrir = new Buscar(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lupabtActionPerformed
 
     private void crearbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Crear abrir = new Pagina_Crear();
+        Pagina_Crear abrir = new Pagina_Crear(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_crearbtActionPerformed
 
     private void reelsbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reelsbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Reels abrir = new Pagina_Reels();
+        Pagina_Reels abrir = new Pagina_Reels(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_reelsbtActionPerformed
 
     private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
         // TODO add your handling code here:
-        Pagina_User abrir = new Pagina_User();
+        Pagina_User abrir = new Pagina_User(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
@@ -282,11 +284,9 @@ public class Pagina_Crear extends javax.swing.JFrame {
        String descripcion = Tf_desc.getText();
        
        if(direccion != ""){
+        String user3=user2;
         BDconsultas temp = new BDconsultas();
-        temp.crearPub(descripcion, direccion);
-        Pagina_User abrir=new Pagina_User();
-        abrir.setVisible(true);
-        this.setVisible(false);
+        temp.crearPub(descripcion, direccion,user3);
        } else {
         NoPath.setForeground(Color.yellow);
        }
@@ -295,13 +295,13 @@ public class Pagina_Crear extends javax.swing.JFrame {
         
         
         ///
-        Pagina_Inicio abrir=new Pagina_Inicio();
+        Pagina_Inicio abrir=new Pagina_Inicio(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn_Crear_PubActionPerformed
 
     private void Btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_cancelarActionPerformed
-        Pagina_Inicio abrir=new Pagina_Inicio();
+        Pagina_Inicio abrir=new Pagina_Inicio(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn_cancelarActionPerformed
@@ -313,7 +313,7 @@ public class Pagina_Crear extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String user) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -341,7 +341,7 @@ public class Pagina_Crear extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pagina_Crear().setVisible(true);
+                new Pagina_Crear(user).setVisible(true);
             }
         });
     }

@@ -3,9 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[410, 700]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -55,10 +52,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="insta3" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="insta1" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="insta2" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="insta1" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="insta2" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="484" max="32767" attributes="0"/>
               </Group>

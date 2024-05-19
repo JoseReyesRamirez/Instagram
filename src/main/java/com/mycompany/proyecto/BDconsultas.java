@@ -34,15 +34,14 @@ public class BDconsultas {
         System.out.print("Insert.\n");
     }
     
-    
-    public void crearPub(String desc, String path){
+     public void crearPub(String desc, String path, String user){
          BD bd = new BD();
         Statement stm=bd.Get_conn();
         LocalDateTime dateTime = LocalDateTime.now();
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String fechaac = dateTime.format(formatters);
-        String datos = "'"+fechaac+"','"+desc+"',1,'"+path+"'";
-        String query = "INSERT INTO Publicaciones (Fecha,Descripcion,IDUsuario, Path) VALUES ("+datos+")";
+        String datos = "'"+fechaac+"','"+desc+"','"+user+"','"+path+"'";
+        String query = "INSERT INTO Publicaciones (Fecha,Descripcion,Username, Path) VALUES ("+datos+")";
         try {
             stm.executeUpdate(query);
         } catch (SQLException ex) {
@@ -53,7 +52,7 @@ public class BDconsultas {
         System.out.print("Insert.\n");
     }
     
-    public ImageIcon extraerImg(){
+    /*public ImageIcon extraerImg(){
          BD bd = new BD();
         Statement stm=bd.Get_conn();
         String query = "SELECT Imagen FROM Publicaciones WHERE Id =1";
@@ -75,8 +74,33 @@ public class BDconsultas {
             Logger.getLogger(Create_account.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-    }
+    }*/
     
+     public String extraerPath(String IDP){
+         BD bd = new BD();
+        Statement stm=bd.Get_conn();
+        String query = "SELECT Path FROM Publicaciones WHERE IDPublicacion ="+IDP;
+        System.out.print("query\n");
+       
+        ResultSet rs = null;
+        try {
+            rs = stm.executeQuery(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(BDconsultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String direccion = null;
+        try {
+            direccion = rs.getString("Path");
+        } catch (SQLException ex) {
+            Logger.getLogger(BDconsultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.print("extraida\n");
+        return direccion;
+   
+    }
+     
+    
+     
     //23161651
     public void Select(String b, String c){
          BD bd = new BD();

@@ -13,8 +13,9 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
     
-    public Pagina_Inicio() {
-       
+    String user2;
+    public Pagina_Inicio(String user) {
+       user2=user;
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
@@ -277,35 +278,35 @@ public class Pagina_Inicio extends javax.swing.JFrame {
 
     private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
         // TODO add your handling code here:
-        Pagina_User abrir = new Pagina_User();
+        Pagina_User abrir = new Pagina_User(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
 
     private void notificacionesbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificacionesbtActionPerformed
         // TODO add your handling code here:
-        Notificaciones abrir = new Notificaciones();
+        Notificaciones abrir = new Notificaciones(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_notificacionesbtActionPerformed
 
     private void lupabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabtActionPerformed
         // TODO add your handling code here:
-        Buscar abrir = new Buscar();
+        Buscar abrir = new Buscar(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lupabtActionPerformed
 
     private void crearbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Crear abrir = new Pagina_Crear();
+        Pagina_Crear abrir = new Pagina_Crear(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_crearbtActionPerformed
 
     private void reelsbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reelsbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Reels abrir = new Pagina_Reels();
+        Pagina_Reels abrir = new Pagina_Reels(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_reelsbtActionPerformed
@@ -328,8 +329,8 @@ public class Pagina_Inicio extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        
+    public static void main(String user) {
+        System.out.print(user);
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -351,7 +352,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pagina_Inicio().setVisible(true);
+                new Pagina_Inicio(user).setVisible(true);
             }
         });
     }

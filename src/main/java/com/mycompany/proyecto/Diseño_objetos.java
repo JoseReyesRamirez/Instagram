@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 public class Diseño_objetos {
     
     public void BordesRedondeados(int TextComponent,int Button ){
-        FlatLightLaf.setup();
+       FlatLightLaf.setup();
         UIManager.put("TextComponent.arc", TextComponent);
         UIManager.put("Button.arc", Button);
     }

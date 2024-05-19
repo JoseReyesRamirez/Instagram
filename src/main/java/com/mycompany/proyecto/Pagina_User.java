@@ -10,16 +10,17 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 
-
 public class Pagina_User extends javax.swing.JFrame {
+    String user2;
     Imagenes Img = new Imagenes();
     Imagenes Imgn = new Imagenes();
     Imagenes Imag = new Imagenes();
     Diseño_objetos diseño = new Diseño_objetos();
     Diseño_objetos diseño2 = new Diseño_objetos();
   
-    public Pagina_User() {
+  public Pagina_User(String user) {
          super("INSTAGRAM");
+         user2=user;
 
             
             //setVisible(true);
@@ -123,7 +124,6 @@ public class Pagina_User extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setFocusCycleRoot(false);
-        setPreferredSize(new java.awt.Dimension(410, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -274,7 +274,7 @@ public class Pagina_User extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(fotoperfillbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(seguir2bt)
@@ -316,7 +316,7 @@ public class Pagina_User extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(fotoperfillbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(seguir3bt)
@@ -406,10 +406,11 @@ public class Pagina_User extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(publicacion1lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(publicacion1lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(publicacion1lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(publicacion1lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(publicacion1lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(publicacion1lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -524,35 +525,35 @@ public class Pagina_User extends javax.swing.JFrame {
 
     private void casitabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casitabtActionPerformed
         // TODO add your handling code here:
-        Pagina_Inicio abrir = new Pagina_Inicio();
+        Pagina_Inicio abrir = new Pagina_Inicio(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_casitabtActionPerformed
 
     private void lupabtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lupabtActionPerformed
         // TODO add your handling code here:
-        Buscar abrir = new Buscar();
+        Buscar abrir = new Buscar(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lupabtActionPerformed
 
     private void crearbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Crear abrir = new Pagina_Crear();
+        Pagina_Crear abrir = new Pagina_Crear(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_crearbtActionPerformed
 
     private void reelsbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reelsbtActionPerformed
         // TODO add your handling code here:
-        Pagina_Reels abrir = new Pagina_Reels();
+        Pagina_Reels abrir = new Pagina_Reels(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_reelsbtActionPerformed
 
     private void perfilbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilbtActionPerformed
         // TODO add your handling code here:
-        Pagina_User abrir = new Pagina_User();
+        Pagina_User abrir = new Pagina_User(user2);
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_perfilbtActionPerformed
@@ -616,7 +617,7 @@ public class Pagina_User extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void main(String args[]) {
+    public void main(String user) {
         
         /*Connection conn = null;
         Statement stmt = null;
@@ -682,7 +683,7 @@ public class Pagina_User extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pagina_User().setVisible(true);
+                new Pagina_User(user).setVisible(true);
             }
         });
     }

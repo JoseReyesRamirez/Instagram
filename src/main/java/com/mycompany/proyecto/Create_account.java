@@ -200,7 +200,7 @@ public class Create_account extends javax.swing.JFrame {
        if(CB_Terminos_Condiciones.isSelected() == true ){
         BDconsultas temp = new BDconsultas();
         temp.insertarDato(nombre, fechaStr, correo, user, pass);
-        Pagina_User abrir=new Pagina_User();
+        Pagina_User abrir=new Pagina_User(user);
         abrir.setVisible(true);
         this.setVisible(false);
        } else {

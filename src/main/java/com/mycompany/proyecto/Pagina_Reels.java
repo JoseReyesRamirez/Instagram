@@ -354,7 +354,6 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
     private void Cambiar_ReelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cambiar_ReelsActionPerformed
         indice = (indice + 1) % gifs.length;
-        System.out.print(user2);
         Cambiar_Reels.setIcon(gifs[indice]);
         Nom_usuario.setText(usernames[indice]); // Cambia el nombre de usuario
         Descripcion_reels.setText(descripciones[indice]); // Cambia la descripcion

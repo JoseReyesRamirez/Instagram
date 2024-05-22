@@ -35,9 +35,22 @@ public class Buscar extends javax.swing.JFrame {
         Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
         Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
+        
         Imgn.SetImageButton(insta1, "src/main/java/imagenes/insta1.png");
         Imgn.SetImageButton(insta2, "src/main/java/imagenes/insta2.png");
         Imgn.SetImageButton(insta3, "src/main/java/imagenes/insta3.png");
+        Imgn.SetImageButton(insta4, "src/main/java/imagenes/insta4.jpg");
+        Imgn.SetImageButton(insta5, "src/main/java/imagenes/insta5.jpg");
+        Imgn.SetImageButton(insta6, "src/main/java/imagenes/insta6.jpg");
+        Imgn.SetImageButton(insta7, "src/main/java/imagenes/insta7.jpg");
+        Imgn.SetImageButton(insta8, "src/main/java/imagenes/insta8.jpg");
+        Imgn.SetImageButton(insta9, "src/main/java/imagenes/insta9.jpg");
+        Imgn.SetImageButton(insta10, "src/main/java/imagenes/insta10.jpg");
+        Imgn.SetImageButton(insta11, "src/main/java/imagenes/insta11.jpg");
+        Imgn.SetImageButton(insta12, "src/main/java/imagenes/insta12.jpg");
+        Imgn.SetImageButton(insta13, "src/main/java/imagenes/insta13.jpg");
+        Imgn.SetImageButton(insta14, "src/main/java/imagenes/insta14.jpg");
+        Imgn.SetImageButton(insta15, "src/main/java/imagenes/insta15.jpg");
 
         
         //BOTONES TRASPARENTES (1 = quitar fondo, 2 = quitar bordes y 3 = quitar ambos)
@@ -57,6 +70,18 @@ public class Buscar extends javax.swing.JFrame {
         insta2 = new javax.swing.JButton();
         insta3 = new javax.swing.JButton();
         insta1 = new javax.swing.JButton();
+        insta5 = new javax.swing.JButton();
+        insta6 = new javax.swing.JButton();
+        insta4 = new javax.swing.JButton();
+        insta8 = new javax.swing.JButton();
+        insta9 = new javax.swing.JButton();
+        insta7 = new javax.swing.JButton();
+        insta11 = new javax.swing.JButton();
+        insta12 = new javax.swing.JButton();
+        insta10 = new javax.swing.JButton();
+        insta14 = new javax.swing.JButton();
+        insta15 = new javax.swing.JButton();
+        insta13 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         casitabt = new javax.swing.JButton();
         lupabt = new javax.swing.JButton();
@@ -77,10 +102,88 @@ public class Buscar extends javax.swing.JFrame {
         insta3.setBorder(null);
         insta3.setBorderPainted(false);
         insta3.setContentAreaFilled(false);
+        insta3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta3ActionPerformed(evt);
+            }
+        });
 
         insta1.setBorder(null);
         insta1.setBorderPainted(false);
         insta1.setContentAreaFilled(false);
+
+        insta5.setBorder(null);
+        insta5.setBorderPainted(false);
+        insta5.setContentAreaFilled(false);
+
+        insta6.setBorder(null);
+        insta6.setBorderPainted(false);
+        insta6.setContentAreaFilled(false);
+
+        insta4.setBorder(null);
+        insta4.setBorderPainted(false);
+        insta4.setContentAreaFilled(false);
+
+        insta8.setBorder(null);
+        insta8.setBorderPainted(false);
+        insta8.setContentAreaFilled(false);
+
+        insta9.setBorder(null);
+        insta9.setBorderPainted(false);
+        insta9.setContentAreaFilled(false);
+
+        insta7.setBorder(null);
+        insta7.setBorderPainted(false);
+        insta7.setContentAreaFilled(false);
+        insta7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta7ActionPerformed(evt);
+            }
+        });
+
+        insta11.setBorder(null);
+        insta11.setBorderPainted(false);
+        insta11.setContentAreaFilled(false);
+
+        insta12.setBorder(null);
+        insta12.setBorderPainted(false);
+        insta12.setContentAreaFilled(false);
+        insta12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta12ActionPerformed(evt);
+            }
+        });
+
+        insta10.setBorder(null);
+        insta10.setBorderPainted(false);
+        insta10.setContentAreaFilled(false);
+        insta10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta10ActionPerformed(evt);
+            }
+        });
+
+        insta14.setBorder(null);
+        insta14.setBorderPainted(false);
+        insta14.setContentAreaFilled(false);
+
+        insta15.setBorder(null);
+        insta15.setBorderPainted(false);
+        insta15.setContentAreaFilled(false);
+        insta15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta15ActionPerformed(evt);
+            }
+        });
+
+        insta13.setBorder(null);
+        insta13.setBorderPainted(false);
+        insta13.setContentAreaFilled(false);
+        insta13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insta13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -88,11 +191,34 @@ public class Buscar extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(insta1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(insta2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insta7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insta8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insta1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insta2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insta4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insta5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insta10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insta11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insta13, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insta14, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(insta3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insta9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
         jPanel3Layout.setVerticalGroup(
@@ -103,7 +229,27 @@ public class Buscar extends javax.swing.JFrame {
                     .addComponent(insta3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(insta1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(insta2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insta6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insta9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insta12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insta11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(insta14, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                    .addComponent(insta15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(insta13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 410, 600));
@@ -277,17 +423,31 @@ public class Buscar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void insta1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void insta7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta7ActionPerformed
         // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_insta7ActionPerformed
 
-    private void insta2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void insta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta3ActionPerformed
         // TODO add your handling code here:
-    }
-    
-    private void insta3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    }//GEN-LAST:event_insta3ActionPerformed
+
+    private void insta10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta10ActionPerformed
         // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_insta10ActionPerformed
+
+    private void insta12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insta12ActionPerformed
+
+    private void insta15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insta15ActionPerformed
+
+    private void insta13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insta13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insta13ActionPerformed
+
+
     /**
      * @param args the command line arguments
      */
@@ -327,8 +487,20 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
     private javax.swing.JButton insta1;
+    private javax.swing.JButton insta10;
+    private javax.swing.JButton insta11;
+    private javax.swing.JButton insta12;
+    private javax.swing.JButton insta13;
+    private javax.swing.JButton insta14;
+    private javax.swing.JButton insta15;
     private javax.swing.JButton insta2;
     private javax.swing.JButton insta3;
+    private javax.swing.JButton insta4;
+    private javax.swing.JButton insta5;
+    private javax.swing.JButton insta6;
+    private javax.swing.JButton insta7;
+    private javax.swing.JButton insta8;
+    private javax.swing.JButton insta9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

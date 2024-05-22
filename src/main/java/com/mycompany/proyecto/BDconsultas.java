@@ -25,7 +25,7 @@ public class BDconsultas {
         
         String datos = "'"+user+"','"+correo+"','"+pass+"','"+nom+"','"+fechaStr+"'";
         String query = "INSERT INTO Usuarios (Username,Email,Contraseña,Nombre,FechaNa) VALUES ("+datos+")";
-        
+        System.out.print(query+".\n");
         try {
             stm.executeUpdate(query);
         } catch (SQLException ex) {

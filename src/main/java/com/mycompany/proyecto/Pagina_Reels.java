@@ -43,10 +43,10 @@ public class Pagina_Reels extends javax.swing.JFrame {
        
         //IMAGENES EN BOTONES DE DESPLAZAMIENTO
         this.setLocationRelativeTo(this);
-        Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
+        Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
         Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
-        Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reel.png");
+        Imgn.SetImageButton(reelsbt, "src/main/java/imagenes/Reels_Inicio.png");
         Imgn.SetImageButton(perfilbt, "src/main/java/imagenes/Perfil.png");
         
         //IMAGENES DE BOTONES ACCIONES

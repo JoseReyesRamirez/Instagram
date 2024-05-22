@@ -31,8 +31,9 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         
         //IMAGENES EN BOTONES
         this.setLocationRelativeTo(this);
-        Imgn.SetImageButton(likebt, "src/main/java/imagenes/Like_Reels.png");
-        Imgn.SetImageButton(commentbt, "src/main/java/imagenes/Comment.png");
+        Imgn.SetImageButton(likebt, "src/main/java/imagenes/Notificaciones.png");
+        Imgn.SetImageButton(commentbt, "src/main/java/imagenes/Comentarios.png");
+        Imgn.SetImageButton(compartirbt, "src/main/java/imagenes/Compartir.png");
         Imgn.SetImageButton(casitabt, "src/main/java/imagenes/Casita_Inicio.png");
         Imgn.SetImageButton(lupabt, "src/main/java/imagenes/Lupa.png");
         Imgn.SetImageButton(crearbt, "src/main/java/imagenes/Crear.png");
@@ -93,6 +94,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         commentbt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        compartirbt = new javax.swing.JButton();
         logolbl = new javax.swing.JLabel();
         pub_user = new javax.swing.JLabel();
         casitabt = new javax.swing.JButton();
@@ -115,7 +117,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
 
         likeslb.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         likeslb.setText("likes");
-        jPanel7.add(likeslb, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 280, -1));
+        jPanel7.add(likeslb, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 200, -1));
 
         img.setAlignmentY(0.0F);
         img.setBorder(null);
@@ -128,7 +130,12 @@ public class Pagina_Inicio extends javax.swing.JFrame {
 
         likebt.setToolTipText("");
         likebt.setBorder(null);
-        jPanel7.add(likebt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 35, 35));
+        likebt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                likebtActionPerformed(evt);
+            }
+        });
+        jPanel7.add(likebt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 30, 30));
 
         commentbt.setBorder(null);
         commentbt.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +143,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 pub_com1ActionPerformed(evt);
             }
         });
-        jPanel7.add(commentbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 35, 35));
+        jPanel7.add(commentbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 30, 30));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel1.setText("desc");
@@ -146,6 +153,11 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Ver comentarios...");
         jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 121, 23));
+
+        compartirbt.setBorderPainted(false);
+        compartirbt.setContentAreaFilled(false);
+        compartirbt.setDefaultCapable(false);
+        jPanel7.add(compartirbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, 30, 30));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 390, 560));
         jPanel1.add(logolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 40));
@@ -164,7 +176,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 casitabtActionPerformed(evt);
             }
         });
-        jPanel1.add(casitabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 40, 30));
+        jPanel1.add(casitabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 30, 30));
 
         lupabt.setBorder(null);
         lupabt.setBorderPainted(false);
@@ -175,7 +187,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 lupabtActionPerformed(evt);
             }
         });
-        jPanel1.add(lupabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 40, 30));
+        jPanel1.add(lupabt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 30, 30));
 
         crearbt.setBorder(null);
         crearbt.setBorderPainted(false);
@@ -186,7 +198,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 crearbtActionPerformed(evt);
             }
         });
-        jPanel1.add(crearbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 40, 30));
+        jPanel1.add(crearbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 30, 30));
 
         reelsbt.setBorder(null);
         reelsbt.setBorderPainted(false);
@@ -197,7 +209,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 reelsbtActionPerformed(evt);
             }
         });
-        jPanel1.add(reelsbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 660, 40, 30));
+        jPanel1.add(reelsbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 660, 30, 30));
 
         perfilbt.setBorder(null);
         perfilbt.setBorderPainted(false);
@@ -208,7 +220,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 perfilbtActionPerformed(evt);
             }
         });
-        jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 40, 30));
+        jPanel1.add(perfilbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 30, 30));
 
         notificacionesbt.setBorder(null);
         notificacionesbt.setBorderPainted(false);
@@ -219,7 +231,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 notificacionesbtActionPerformed(evt);
             }
         });
-        jPanel1.add(notificacionesbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 40, 30));
+        jPanel1.add(notificacionesbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 30, 30));
 
         mensajesbt.setBorder(null);
         mensajesbt.setContentAreaFilled(false);
@@ -229,8 +241,8 @@ public class Pagina_Inicio extends javax.swing.JFrame {
                 mensajesbtActionPerformed(evt);
             }
         });
-        jPanel1.add(mensajesbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 40, 30));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 410, 50));
+        jPanel1.add(mensajesbt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 30, 30));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 400, 50));
 
         fondolbl.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(fondolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, 700));
@@ -303,6 +315,10 @@ public class Pagina_Inicio extends javax.swing.JFrame {
         likeslb.setText(likes[indice]);
     }//GEN-LAST:event_imgActionPerformed
 
+    private void likebtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_likebtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_likebtActionPerformed
+
     
     
     
@@ -344,6 +360,7 @@ public class Pagina_Inicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton casitabt;
     private javax.swing.JButton commentbt;
+    private javax.swing.JButton compartirbt;
     private javax.swing.JButton crearbt;
     private javax.swing.JLabel fondolbl;
     private javax.swing.JButton img;

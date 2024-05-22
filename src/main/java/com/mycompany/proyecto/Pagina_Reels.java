@@ -33,11 +33,12 @@ public class Pagina_Reels extends javax.swing.JFrame {
         //Descripciones
         String[] descripciones;
         
-        
+         private int Likeguardado,IDPublicacion;
     public Pagina_Reels(String user) {
         user2=user;
         initComponents();
-        
+        actualizarLabel();
+        leerLikesDesdeBD();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false); // Evitar que el usuario modifique el tamaño
         setSize(425, 730);
@@ -114,6 +115,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         perfilbt = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         Like = new javax.swing.JButton();
         Opciones = new javax.swing.JButton();
         Camara = new javax.swing.JButton();
@@ -221,6 +223,9 @@ public class Pagina_Reels extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("0");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 20, -1));
+
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         Like.setForeground(new java.awt.Color(242, 242, 242));
         Like.setBorder(null);
@@ -371,17 +376,44 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Nom_usuario.setText(usernames[indice]); // Cambia el nombre de usuario
         Descripcion_reels.setText(descripciones[indice]); // Cambia la descripcion
         gif=gif+1;
+        leerLikesDesdeBD();
+        actualizarLabel();
         if (gif>5) {
             gif=1;
         }
+        leerLikesDesdeBD();
+        actualizarLabel();
     }//GEN-LAST:event_likelabelActionPerformed
 
-    
+    private void leerLikesDesdeBD() {
+        // Configuración de la conexión a la base de datos
+        String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
+        IDPublicacion = gif;
+        String consultaSQL = "SELECT ContadorLikes FROM Publicaciones WHERE IDPublicacion = " + IDPublicacion;
+
+        try (Connection conexion = DriverManager.getConnection(url);
+             Statement statement = conexion.createStatement();
+             ResultSet resultado = statement.executeQuery(consultaSQL)) {
+
+            if (resultado.next()) {
+                Likeguardado = resultado.getInt("ContadorLikes");
+                  
+                
+            } else {
+                System.out.println("No se encontró ningún registro en la tabla Publicaciones.");
+            }
+            jLabel2.setText("" + Likeguardado);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al conectar con la base de datos.");
+        }
+    }
     
     private void LikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LikeActionPerformed
 
          try {
-  
+                    
                     Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
                     String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
@@ -403,10 +435,12 @@ public class Pagina_Reels extends javax.swing.JFrame {
                         // Si el contador es 0 o 1, intercambiar
                         sql = "UPDATE Publicaciones SET ContadorLikes = " + (contadorLikes == 0 ? 1 : 0) + " WHERE IDPublicacion = " + IDPublicacion;
                         contador=contadorLikes;
+                        actualizarLabel();
                     } else {
                         // Si el contador es diferente de 0 o 1, = 1
                         sql = "UPDATE Publicaciones SET ContadorLikes = 1 WHERE IDPublicacion = " + IDPublicacion;
                         contador=contadorLikes;
+                        actualizarLabel();
                     }
                     stmt.executeUpdate(sql);
 
@@ -432,8 +466,9 @@ public class Pagina_Reels extends javax.swing.JFrame {
            
        }
      private void actualizarLabel() {
-         jLabel1.setText("" + contador);
-        
+         leerLikesDesdeBD();
+         jLabel1.setText("" + Likeguardado);
+         leerLikesDesdeBD();
     }
     
     private void OpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionesActionPerformed
@@ -493,6 +528,7 @@ System.out.print(user);
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

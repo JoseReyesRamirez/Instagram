@@ -2,15 +2,21 @@
 package com.mycompany.proyecto;
 
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class Pagina_Reels extends javax.swing.JFrame {
+    int gif=1;
+    int contador;
+    private static Connection conn = null;
     String user2;
         Imagenes Img = new Imagenes();
         Imagenes Imgn = new Imagenes();
@@ -86,11 +92,11 @@ public class Pagina_Reels extends javax.swing.JFrame {
         for (int i = 0; i < urls.length; i++) {
             ImageIcon imageIcon = new ImageIcon(urls[i]);
             Image image = imageIcon.getImage(); // transformalo
-            Image newimg = image.getScaledInstance(Cambiar_Reels.getWidth(), Cambiar_Reels.getHeight(), Image.SCALE_DEFAULT); // escala esto
+            Image newimg = image.getScaledInstance(likelabel.getWidth(), likelabel.getHeight(), Image.SCALE_DEFAULT); // escala esto
             gifs[i] = new ImageIcon(newimg);  // transformalo de nuevo
         }
         
-        Cambiar_Reels.setIcon(gifs[0]); // Establece la imagen inicial del botón
+        likelabel.setIcon(gifs[0]); // Establece la imagen inicial del botón
         Nom_usuario.setText(usernames[0]); // Establece el nombre de usuario inicial
         Descripcion_reels.setText(descripciones[0]); // Establece la descripcion inicial
     }
@@ -107,6 +113,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         reelsbt = new javax.swing.JButton();
         perfilbt = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         Like = new javax.swing.JButton();
         Opciones = new javax.swing.JButton();
         Camara = new javax.swing.JButton();
@@ -116,7 +123,7 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Nom_usuario = new javax.swing.JLabel();
         Foto_Perfil = new javax.swing.JLabel();
         Logo_Reels = new javax.swing.JLabel();
-        Cambiar_Reels = new javax.swing.JButton();
+        likelabel = new javax.swing.JButton();
         L_video = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -209,6 +216,9 @@ public class Pagina_Reels extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setText("  .");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, -1));
+
         Like.setForeground(new java.awt.Color(242, 242, 242));
         Like.setBorder(null);
         Like.setContentAreaFilled(false);
@@ -279,16 +289,16 @@ public class Pagina_Reels extends javax.swing.JFrame {
         Logo_Reels.setText("Reels");
         jPanel1.add(Logo_Reels, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 40));
 
-        Cambiar_Reels.setForeground(new java.awt.Color(242, 242, 242));
-        Cambiar_Reels.setBorder(null);
-        Cambiar_Reels.setContentAreaFilled(false);
-        Cambiar_Reels.setDefaultCapable(false);
-        Cambiar_Reels.addActionListener(new java.awt.event.ActionListener() {
+        likelabel.setForeground(new java.awt.Color(242, 242, 242));
+        likelabel.setBorder(null);
+        likelabel.setContentAreaFilled(false);
+        likelabel.setDefaultCapable(false);
+        likelabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cambiar_ReelsActionPerformed(evt);
+                likelabelActionPerformed(evt);
             }
         });
-        jPanel1.add(Cambiar_Reels, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
+        jPanel1.add(likelabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
         jPanel1.add(L_video, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 650));
@@ -352,17 +362,77 @@ public class Pagina_Reels extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CompartirActionPerformed
 
-    private void Cambiar_ReelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cambiar_ReelsActionPerformed
+    private void likelabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_likelabelActionPerformed
         indice = (indice + 1) % gifs.length;
-        Cambiar_Reels.setIcon(gifs[indice]);
+        likelabel.setIcon(gifs[indice]);
         Nom_usuario.setText(usernames[indice]); // Cambia el nombre de usuario
         Descripcion_reels.setText(descripciones[indice]); // Cambia la descripcion
-    }//GEN-LAST:event_Cambiar_ReelsActionPerformed
+        gif=gif+1;
+        if (gif>5) {
+            gif=1;
+        }
+    }//GEN-LAST:event_likelabelActionPerformed
 
+    
+    
     private void LikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LikeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LikeActionPerformed
 
+         try {
+  
+                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+                    String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
+
+                    conn = DriverManager.getConnection(url);
+                      
+                    int IDPublicacion = gif; 
+                    String sql = "SELECT ContadorLikes FROM Publicaciones WHERE IDPublicacion = " + IDPublicacion;
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(sql);
+                    
+                    int contadorLikes = 0;
+                    
+                    if (rs.next()) {
+                        contadorLikes = rs.getInt("ContadorLikes");
+                    }
+
+                    if (contadorLikes == 0 || contadorLikes == 1) {
+                        // Si el contador es 0 o 1, intercambiar
+                        sql = "UPDATE Publicaciones SET ContadorLikes = " + (contadorLikes == 0 ? 1 : 0) + " WHERE IDPublicacion = " + IDPublicacion;
+                        contador=contadorLikes;
+                    } else {
+                        // Si el contador es diferente de 0 o 1, = 1
+                        sql = "UPDATE Publicaciones SET ContadorLikes = 1 WHERE IDPublicacion = " + IDPublicacion;
+                        contador=contadorLikes;
+                    }
+                    stmt.executeUpdate(sql);
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } finally {
+
+                    if (conn != null) {
+                        try {
+                            conn.close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
+        actualizarLabel(); // Actualizamos la etiqueta del contador
+        
+        
+        
+        
+    }//GEN-LAST:event_LikeActionPerformed
+       private void variables(){
+           
+       }
+     private void actualizarLabel() {
+         jLabel1.setText("" + contador);
+        
+    }
+    
     private void OpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcionesActionPerformed
@@ -403,10 +473,11 @@ System.out.print(user);
             }
         });
     }
+    
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Camara;
-    private javax.swing.JButton Cambiar_Reels;
     private javax.swing.JButton Comentarios;
     private javax.swing.JButton Compartir;
     private javax.swing.JLabel Descripcion_reels;
@@ -418,11 +489,15 @@ System.out.print(user);
     private javax.swing.JButton Opciones;
     private javax.swing.JButton casitabt;
     private javax.swing.JButton crearbt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton likelabel;
     private javax.swing.JButton lupabt;
     private javax.swing.JButton perfilbt;
     private javax.swing.JButton reelsbt;
     // End of variables declaration//GEN-END:variables
+
+   
 }

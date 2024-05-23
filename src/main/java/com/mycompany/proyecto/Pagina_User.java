@@ -9,15 +9,29 @@ import javax.swing.JTextField;
 import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Pagina_User extends javax.swing.JFrame {
     String user2;
+    private static Connection conn = null;
+    int contador,contador2,seguidorestot;
+    int user = 0;
+    int users2 =0;
+    int vuelta1=0;
+    int vuelta2=0;
     Imagenes Img = new Imagenes();
     Imagenes Imgn = new Imagenes();
     Imagenes Imag = new Imagenes();
     Diseño_objetos diseño = new Diseño_objetos();
     Diseño_objetos diseño2 = new Diseño_objetos();
-  
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////
+    
+           private int Likeguardado,IDPublicacion;int gif=1;
+           
+     /////////////////////////////////////////////////////////////////////////////////
   public Pagina_User(String user) {
          super("INSTAGRAM");
          user2=user;
@@ -571,11 +585,127 @@ public class Pagina_User extends javax.swing.JFrame {
     }//GEN-LAST:event_configuracionbtActionPerformed
 
     private void seguir2btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seguir2btActionPerformed
-        // TODO add your handling code here:
+        try {
+      Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+                    String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
+
+                    conn = DriverManager.getConnection(url);
+                      
+                    int IDPublicacion = gif; 
+                    String sql = "SELECT ContSeguidores FROM Seguidores WHERE IDSeguidores = " + IDPublicacion;
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(sql);
+                    
+                    int ContSeguidores = 0;
+                    
+                    if (rs.next()) {
+                        ContSeguidores = rs.getInt("ContSeguidores");
+                    }
+
+                    
+                    if (vuelta2<1 || vuelta1<1) {
+                        // Si el contador es 0 o 1, intercambiar
+                        vuelta1=vuelta1+1;
+                        vuelta2=vuelta1;
+                        sql = "UPDATE Seguidores SET ContSeguidores = " + (seguidorestot) + " WHERE IDSeguidores = " + IDPublicacion;
+                        contador=ContSeguidores;
+                        actualizarLabel();
+                    } 
+                    users2=users2+1;
+                     if ( users2>1) {
+                         users2 = 0;
+                        contador=contador-2;
+                    }
+                    contador=contador+1;
+                    seguidorestot=contador+contador2;
+                    sql = "UPDATE Seguidores SET ContSeguidores = " + (seguidorestot) + " WHERE IDSeguidores = " + IDPublicacion;
+                    stmt.executeUpdate(sql);
+                    actualizarLabel();
+                    stmt.executeUpdate(sql);
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } finally {
+
+                    if (conn != null) {
+                        try {
+                            conn.close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
+        actualizarLabel(); // Actualizamos la etiqueta del contador
+        
+        
+        
+        
+        
     }//GEN-LAST:event_seguir2btActionPerformed
 
     private void seguir3btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seguir3btActionPerformed
-        // TODO add your handling code here:
+        
+        
+       try {
+      Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+                    String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
+
+                    conn = DriverManager.getConnection(url);
+                      
+                    int IDPublicacion = gif; 
+                    String sql = "SELECT ContSeguidores FROM Seguidores WHERE IDSeguidores = " + IDPublicacion;
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(sql);
+                    
+                    int ContSeguidores = 0;
+                    
+                    if (rs.next()) {
+                        ContSeguidores = rs.getInt("ContSeguidores");
+                    }
+
+                    if (vuelta2<1 || vuelta1<1) {
+                        // Si el contador es 0 o 1, intercambiar
+                        vuelta2=vuelta2+1;
+                        vuelta1=vuelta2;
+                        sql = "UPDATE Seguidores SET ContSeguidores = " + (seguidorestot) + " WHERE IDSeguidores = " + IDPublicacion;
+                        contador2=ContSeguidores;
+                        actualizarLabel();
+                    } 
+                    user=user+1;
+                     if ( user>1) {
+                         user = 0;
+                        contador2=contador2-2;
+                    }
+                    contador2=contador2+1;
+                    seguidorestot=contador+contador2;
+                    sql = "UPDATE Seguidores SET ContSeguidores = " + (seguidorestot) + " WHERE IDSeguidores = " + IDPublicacion;
+                    stmt.executeUpdate(sql);
+                    actualizarLabel();
+                    stmt.executeUpdate(sql);
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } finally {
+
+                    if (conn != null) {
+                        try {
+                            conn.close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
+        actualizarLabel(); // Actualizamos la etiqueta del contador
+        
+        
+        
+        
+         ////////////////////////////////////////
+         ////////////////////////////////////////
+        ////////////////////////////////////////
+        
     }//GEN-LAST:event_seguir3btActionPerformed
 
     private void contseguidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contseguidosActionPerformed
@@ -687,6 +817,43 @@ public class Pagina_User extends javax.swing.JFrame {
             }
         });
     }
+    
+    ///////////////////////////////////////////////////////////////////////////////
+    
+ 
+    
+    
+  
+       private void variables(){
+           
+       }
+     private void actualizarLabel() {
+        try {
+            String url = "jdbc:ucanaccess://" + ".\\src" + ".\\main" + ".\\java" + ".\\AbsoluteLayout" + ".\\DB_Instagram2.accdb";
+            conn = DriverManager.getConnection(url);
+            
+            int IDPublicacion = gif;
+            
+            String sql = "SELECT ContSeguidores FROM Seguidores WHERE IDSeguidores = " + IDPublicacion;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+           
+            seguidorestot=contador+contador2;
+             sql = "UPDATE Seguidores SET ContSeguidores = " + (seguidorestot) + " WHERE IDSeguidores = " + IDPublicacion;
+            contsegudores.setText("" + seguidorestot);
+        } catch (SQLException ex) {
+            Logger.getLogger(Pagina_User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  
+    }
+    
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup PublicacionesYReels;
